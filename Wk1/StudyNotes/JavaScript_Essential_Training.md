@@ -114,6 +114,13 @@ var a = 5;
 alert(++a);   //6: do '++a' before 'alert'; now a === 6;
 alert(a++);  //6: do 'alert' before doing 'a++'; so alert is '6'. Then do 'a++' and now a===7; It is very confusing issue that should be avoided.
 So usually they are only used inside their own statements by themselves, so that it does not cause bugs etc.
+
+// Better code for testing below, added on later:
+var a = 5;
+console.warn(++a);   //6: do '++a' before 'alert'; now a === 6;
+console.info(a);
+console.error(a++);
+console.log(a);
 */
 
 
@@ -122,8 +129,8 @@ Ternary Operator (all above are binary operators, which works on left and right 
 condition ? true : false
 
 /* example:
-var PlayerOne = 500, PlayerTwo = 600;
-var HighScore = (PlayerOne > PlayerTwo) ? PlayerOne : PlayerTwo ;
+var PlayerOne = 500, PlayerTwo = 600, HighScore;
+HighScore = (PlayerOne > PlayerTwo) ? PlayerOne : PlayerTwo ;
 
 // It equals to:
 if (PlayerOne > PlayerTwo) {
