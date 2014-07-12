@@ -1,4 +1,5 @@
 Core Concepts:
+=========
 Scripting Language that only works inside a Web Browser.
     It runs inside a web page, which is inside Web Browser, which is inside OS.
     If user disable JavaScript inside a browser, it will be sent to the browser but won't be executed.
@@ -7,12 +8,35 @@ It is a client-side language, that is pushed from server to end-user's Web Brows
 Program runs on the server is called Server-side language, or Back-end language, like PHP, RoR, ASP.Net etc.
 It now also runs in Application side such as Adobe Acrobat or PhotoShop, or Server-side such as Node.js or Google Apps Script.
 
+Languages and their intentions:
+Windows Operating System written on C++. Mac OS X Operation System written on C.
+M$ created C# for applications working on Windows. Apple created Objective-C for applications working on Mac OS X and IOS.
+HTML/CSS/JavaScript are for web pages and web applications working inside a Web Browser. Just like VBA working inside M$ Office System, or Clarity Report working inside MYOB EXONET.
+
+When we talking about learning something for programming, we really talking about is:
+<li> A Language </li>
+<li> All the frameworks learned with the language </li>
+<li> All the patterns learned to be productive and effective </li>
+<li> All the tools learned that go along with them </li>
+
+JavaScript was written to support SMALL SNIPPETS of code to modify the DOM state,
+in express tiny little event handlers. It does that very, very well. But, outside of this scope,
+it is not type safe(barely knows about types), horribly easy of hijack code,
+and even accidentally make functions vanish. It has minimal error reporting.
+
+
 History:
 It was developed in 1995 called LiveScript, then renamed as JavaScript in 1996 (implemented inside NetScape2).
 IE3 did JScript (M$ version). In 1997, Netscape submitted it to ECMA and becomes ECMAScript as standard.
 1999 EcMAScript 3 published has been universally supported, and becomes the web standard everyone uses even now.
 2009 ECMAScript 5 published but still not fully supported by various browsers, and still backwards compatible with 3.
 But People always call it JavaScript instead of ECMAScript.
+
+It was initially created for server-side scripting, not client-side scripting as now. But Netscape Server is not popular at all,
+and no one actually used it that way at all, so this purpose was soon forgotten, but still remains active inside Mozilla's codebase;
+just buried there without many people know about the features. Until Node.js and Common.js comes out. On the other hand,
+client-side scripting was booming and developed quickly, as well as hugely popular and successful, which becomes its trade mark.
+
 
 Tools:
 Just Text Editor is enough; such as  Sublime Text Editor I am using.
@@ -251,3 +275,28 @@ console.log (loanCalculator(100000, 60));
 //that can be simply used (quote or assign the value) inside the function, or used outside of the function (passing the value from inside the function to outside).
 
 
+// Type of Variables:
+
+<li> Arrays using [], which is zero-based index </li>
+var multipleValues1 = []; // Most common way to define an Array, but not the only way.
+multipleValues1[0] = 50; multipleValues1[2] = 60; multipleValues1[3] = "Mouse"; // Assign values to the Array.
+var multipleValues2 = [50,60,"Mouse"]; // Define the Array with value of slots included. But the length of the Array is still dymatic by default.
+var multipleValues3 = new Array();  // initialize the variable as an object, which is an Array;
+var multipleValues4 = Array();  // This is also OK. The slots inside Array are dymatic , as much or little as you want them to be.
+var multipleValues5 = Array(5); // Defined that only 5 slots inside the Array. No more no less. The value of a slot would be 'undefined' before assignment.
+
+console.log(multipleValues5.length); // the result would be 5;   // The highest index number is 4, because it is zero-based.
+
+// Array also has methods (as usual object do), like .reverse(), .join(), .sort(), etc;
+/* Examples:
+var multipleValues2 = [50,60,"Mouse"];                  // Assignment of [50,60,"Mouse"];
+var reverseValue = multipleValues2.reverse();      // Reversed the slot positions;
+console.warn(reverseValue);                                 // ["Mouse",60,50]
+console.info(multipleValues2);                              // ["Mouse",60,50]
+var joinValue = multipleValues2.join();                 // Join function is to join all the strings together;
+console.log(joinValue);                                         // Mouse,60,50
+console.info(multipleValues2);                             // ["Mouse",60,50]
+var sortValue = multipleValues2.sort();                 // sorting:
+console.log(sortValue);                                         // [50,60,"Mouse"]
+console.info(multipleValues2);                              // [50,60,"Mouse"]
+*/
