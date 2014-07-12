@@ -156,7 +156,98 @@ use:
 It has to be seen using JavaScript console, such as Firebug inside Firefox browser. Also be used in IE & Chrome now.
 
 
+Loop:
 
+// While Loop, just like if() but repeated many times until condition meet:
+var a = 1;
+while (a<10) {
+    console.log(a);
+    a++;
+}
 
+//Do-While Loop, which will execute the inside statements at least once before checking conditions, which is rarely used:
+var a = 1;
+do {
+    console.log(a);
+    a++;
+} while (a<10);
+
+// For Loop: for (set up index; checking condition; increment index) {//statements;}:
+for (var a=1; a<10; a++) {
+    console.log(a);
+}
+
+//Break: break jumps out of the loop:
+for (var a=1; a<10; a++) {
+    console.log(a);
+    if (a==5){
+    break;
+    }
+    // could have more statements here to do staff;
+}
+
+/*
+for (var a=1; a<10; a++) {
+    console.log(a);
+    if (a==5){
+    break;
+    }
+    console.info("Just passed Break Statement, and doing second console info now");
+}
+console.warn("All Done");
+//result: no console info after 5, then warning message of "All Done".
+ */
+
+//Continue: continue jumps back to condition checking again without doing second set of staff:
+for (var a=1; a<10; a++) {
+    // do first set of staff
+    console.log(a);
+    if (a==5){
+    continue;
+    }
+    // do second set of staff
+   console.info("Just passed Continue Statement");
+}
+
+/*
+for (var a=1; a<10; a++) {
+    console.log(a);
+    if (a==5){
+    continue;
+    }
+    console.info("Just passed continue Statement, and doing second console info now");
+}
+console.warn("All Done");
+// result: console info after 5 is not showing, but back to normal from next (6) onwards to 9 - then warning message of "All Done".
+ */
+
+//Function Statements: function name(parameters) {statements; even nest if() statement, loop or even another function etc; and/or return statement}.
+//Sometime later, name(parameters) will call the function to be executed, which could be repeated calls here and there.
+//Function statements won't run unless explicitely called
+
+// Best practice: Define your functions before calling them. You don't have to, but doing so will make them more readable.
+
+/* Common Mistake: Parameter Mismatch
+function loanCalculator(amount, month, interestRate, name) {
+    //do something here;
+}
+
+var interestThisMonth = loanCalculator(100000, 60, 7, "Fred Smith");
+//This one is correct example;
+
+console.log (loanCalculator(100000, 60, 7, "Fred Smith", "ExtraParameter"));
+//"ExtraParameter" is ignored in JavaScript language here, and function working fine.
+//Unlike some other languages that will break the code, it will still works.
+
+console.log (loanCalculator(100000, 60));
+//Now both 'interestRate' and 'name' parameters are missing, and just be assign the value of 'undefined';
+//If your function can't deal with 'undefined' value, the function code will be broken. Otherwise it will still work as expected.
+
+*/
+
+//Variable Scope: variable defined inside a function is called Local Variable, that only exists inside that function.
+//Try to access that variable name outside of the function will return "undefined" value.
+//Alternative is to define the variable outside of the function, which is now called Global Variable,
+//that can be simply used (quote or assign the value) inside the function, or used outside of the function (passing the value from inside the function to outside).
 
 
