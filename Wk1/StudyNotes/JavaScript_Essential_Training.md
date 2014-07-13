@@ -300,3 +300,101 @@ var sortValue = multipleValues2.sort();                 // sorting:
 console.log(sortValue);                                         // [50,60,"Mouse"]
 console.info(multipleValues2);                              // [50,60,"Mouse"]
 */
+
+/* Arrays are everywhere and you can't escape it.
+var myArrayOf Links = webPage.getElementsByTagName("a");
+// return all links of <a href= ...> inside the Array;
+*/
+
+// Type of Numbers: All JavaScript numbers are internally stored as 64-bit floating point numbers,
+// so you don't have to diffenciate between the type of numbers like in other language (such as int, float, ...,  etc).
+// However it could cause issues using floating in financial calculations, but in reality no one would use it to do client-side large financial calculations.
+// So it is safe to use it for usual average calculations. {As long as it is not too funcy..}
+
+/* Addition vs. Concatenation
+
+// Example 1: All numbers:
+var foo = 5, bar = 5; console.log(foo + bar);                   // result: 10
+
+// Example 2: All strings:
+var foo = "5", bar = "5"; console.log(foo + bar);             // result: 55
+
+// Example 3: Mixed types:
+var foo = 5, bar = "5"; console.log(foo + bar);                // result: 55 -- If one is string, both are treated as strings
+
+// Example 4: Mixed types but multiply:
+var foo = 5, bar = "5"; console.log(foo * bar);           // result: NaN (Special meaning of "Not an Number")
+// In this case, bar could also be "abc" or sth else.
+
+// Example 5: Call method Number() to turn a string to be a number.
+var foo = "55", bar = "abc";
+var myNumber1 = Number(foo); console.log(myNumber1);            // result: 55
+var myNumber2 = Number(bar); console.log(myNumber2);            // result: NaN
+
+if (isNaN(myNumber2)) {
+    console.info("It is not an number!");
+}
+
+if (!isNaN(myNumber1)) {
+    console.info("It is an number! And I use double negative to make this condition to be TRUE !!!");
+}
+// because there was no much function as 'isNumber', so we have to get creative to use 'if not not a number' or  '!isNaN' to do the checking
+
+// Example 6: Use Math Object and its many Methods:
+var a = 200.6, b = 300.1, c = 400;
+var x = Math.round(a); console.log(x);          // result: 201
+var y = Math.round(b); console.info(y);         // result: 300
+var biggest = Math.max(a,b,c); console.info(biggest);           // result: 400
+var smallest = Math.min(a,b,c); console.log(smallest);          // result: 200.6
+// Also other Methods like: Math.PI; Math.random(); Math.sqrt(); Math.log(); etc. Check out "http://www.w3schools.com/jsref/jsref_obj_math.asp"
+*/
+
+
+// String Type:
+
+var myString1 = "Don't mix up single quote and double quote, and don't cause confusion. Use each sign only is fine";
+var myString2 = "In case you have to say: \"I have to use double quotes here. \" You have to add '\' in front of double quote to avoid confusion.";
+
+// String is an object and has properties and methods:
+
+console.log(myString1.length);                          // result: 97
+console.info(myString1.toUpperCase());              // all letters converted to upper case;         // Also: toLowerCase() method as well;
+var myString3 = "This is a single phrase."
+var x = myString3.split(" ");                               // Split by space as " ";
+console.warn(x);                                                // result: ["This","is","a","single","phrase."]
+console.info(myString1.split(" "));                     // Same type of result as above, and "Don't" are treated as single word inside the array.
+console.info(myString1.indexOf("single"));      // result: 13
+
+// What if can't be find from that string at all? It would return: -1
+if (myString1.indexOf("trible") == -1) {
+    console.warn("This word does not exist in that phrase !");
+}
+
+// There is also a method of .lastIndexOf(), when a word occur multiple times inside a phrase.
+
+// Other methods like .subStr, .subString, .slice():            <The Teacher is wrong. Research on .slice(beginning position, ending position); and get it right>
+console.warn(myString3.indexOf("single"));              //result: 10
+var x = myString3.slice(10,17);                                 // Start: 10, end: 17, all positions inclusive.
+console.info(x);                                                          // result: single
+console.warn(myString3.substr(10,6));                     // result: single         // (begining position, length)
+console.error(myString3.substring(10,17));              // result: single         // (start, end)   ==> same as .slice(), but default condition checking etc are different
+
+// String Comparison
+var st1 = "Hello", st2 = "hello";  // st1 != st2;
+if (st1.toLowerCase() == st2.toLowerCase()) {
+    console.info("They are for same meaning, or 'equal' if that's what you mean!");
+}
+
+// when comparing 2 strings, it just compares the first letter by ASCII value. so 'A' <'Z' < 'a' <'b'. st2 > st1.
+
+// Authoritive Reference Guide: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+==========================================================
+// These guys @ Mozilla 'owns' the language...
+-------------------------------------------------------------------
+
+
+
+
+
+
+
