@@ -524,7 +524,48 @@ myList.insertBefore(myNewElement,secondItem);                       // Insert be
  */
 
 
+// Working With Events:
+// Events are things happening at client-side. You just need to decide what event you care about,
+// and then programing the action for them, or called 'handle' or 'listen' to that event you care.
+// So these methods typically have names like: onclick, onmouseover, onblur, onload, onfocus, etc.
 
+/*
+// Handling Event Method 1 of 3:    Simpliest and Ugliest way:
+<button onclick="alert('Hello, World!');">
+    // Run some JS code here;
+</button>               // In very old days of webpage has internal JS code this is the way. You can't re-use it and hard to read/find
+
+// 2nd Method:    Anomymous function method, which is most popular method in use for handling events
+// start with element.event, such as:   window.onload, ...,
+myElement.onclick = function() {
+    // your event handling code here;
+};                                                              // pay attention to ';'  --> beginner's error of missing it. Because it is sth=sth;
+
+// 3rd Method:
+document.addEventListener('click', myFunction, false);
+
+// But, IE 8 and previous version ==> using different function as below:
+document.attachEvent('onclick', myFunction);
+// This causes trouble that programmer now have to determine user browser version so that to make code usable cross-browser;
+// Or, to have a small block of code to determine which function exists inside current user browser. Example below:
+
+function addCrossBrowserEventListener (elementName, eventName, functionName) {
+    // does the addEventListener function exist?
+    if (elementName.addEventListener) {
+        // yes - use it
+        elementName.addEventListener(eventName, functionName, false);
+        return true;
+    } else{
+        // otherwise use attachEvent
+        elementName.attachEvent("on" + eventName, functionName);
+        return true;
+    }
+}
+
+// Further development: JQuery(or other third-party JS Library) provides excellent cross-browser support,
+// So you don't have to write any of your own cross browser support code anymore.
+
+ */
 
 
 
