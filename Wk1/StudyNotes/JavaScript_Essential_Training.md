@@ -45,6 +45,13 @@ It is free and available on all kind of platforms. Including debug feature, Git 
 Also installed Firebug to latest Firefox Browser, as one of two major tools used here, for debuging and stepping tools.
 It also can allow user to directly execute JavaScript programs without using a web page. (Enable Console Panel &. Command Editor Panel)
 
+
+// Authoritive Reference Guide: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+==========================================================
+// These guys @ Mozilla 'owns' the language...
+-------------------------------------------------------------------
+
+
 Structure:
 JavaScript is Case Sensitive!
 Each JavaScript should be ended by ";",
@@ -387,10 +394,27 @@ if (st1.toLowerCase() == st2.toLowerCase()) {
 
 // when comparing 2 strings, it just compares the first letter by ASCII value. so 'A' <'Z' < 'a' <'b'. st2 > st1.
 
-// Authoritive Reference Guide: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
-==========================================================
-// These guys @ Mozilla 'owns' the language...
--------------------------------------------------------------------
+
+// Type Date as well as Object Date, with its methods etc:
+var today = new Date();             // current date and time;
+var y2k = new Date(2000, 0,1);          // result:  1/1/2000        : Notice that month is zero-based; date returns 1~31.
+var y2k = new Date(2000,0,1,0,0,0);         // result:   Date {Sat Jan 01 2000 00:00:00 GMT+1100 (EST)}  ==> (year, month, date, hour, minute, second)
+console.log(today.getMonth(), today.getFullYear(), today.getDate());            // result: 6 2014 13  (mth, yr, day) --> [Today is 13/7/14] -- mth is 0-based..
+console.error(today.getYear());                 // result: 114  ---> This one is should not be used, because under certain case it would return wrong results.
+console.info(today.getDay());                   // result: 0  (as Sunday. It is 0 ~ 6, which is from 'Sunday' to 'Saturday')
+console.info(today.getHours());                 // result: 19 (Now is 19:16. BTW, getHours() returns 0~23, another zero-based one)
+console.info(today.getTime());                  // result: 1405242934878    ===> Which is the milliseconds since 1/1/1970 00:00:00.
+// .getTime() is the most useful one in this catalogue. It is the best way to compare time.
+
+today.setDate(14);                          // set Day of month is 14;
+today.setFullYear(2000);                 // set year to 2000;
+today.setDay(0);                             // set Day of week to Sunday;
+
+// consider how to compare dates here: They are objects, and different objects have same value are still different objects!
+var date1 = new Date(2000,0,1);
+var date2 = new Date(2000,0,1);
+if (date1 == date 2 ) {...}             // always FALSE !!! --> THEY ARE DIFFERENT OBJECTS!
+if (date1.getTime() == date2.getTime()) {...}           // always TRUE --> getTime() returns a value, which are the same here;
 
 
 
