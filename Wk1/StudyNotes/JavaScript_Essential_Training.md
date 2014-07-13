@@ -417,6 +417,122 @@ if (date1 == date 2 ) {...}             // always FALSE !!! --> THEY ARE DIFFERE
 if (date1.getTime() == date2.getTime()) {...}           // always TRUE --> getTime() returns a value, which are the same here;
 
 
+// Object Creation:
+
+/*
+// instea of using variables such as below:
+var playerName ="Smith", playerScore=1000, playerRank=1;
+// We can now create a object and use internal properties:
+var player = new object();                      // Create an empty container and call it 'player';
+player.name="Smith"; player.score=1000; player.rank=1;          // add things into the container for both name/label and values;
+// Also can do it using shorthand way as below:
+var player = {name: "Smith", score:1000, rank:1};                    // Object use {} and name:value peer;  Array use [] and just value ==> This is important!
+ */
+
+// Object Method, Association, and Call:
+
+/*
+var player1 = {name: "Smith", score:1000, rank:1}, player2 = {name:"Fred",score:800,rank:5};    // define objects, which also looks like rows of a table?
+
+function playerDetails() {                                                                                                                   // use function to define methods, common way to use objects;
+    console.log(this.name + " has a rank of: " + this.rank + "; and has a score of: " + this.score);    // use 'this' because the object is not defined or passed in here;
+}
+
+player1.showDetails = playerDetails;        // because there is no '()' at the end, it is not a call of the object yet; just 'associate' the object 'player1' to the method
+player2.showDetails = playerDetails;        // just 'associate' the object 'player2' to the function/method
+
+player1.showDetails();                              // Call the method for the object 'player1', using '()' next to the object's property or associate
+// result: "Smith has a rank of: 1; and has a score of: 1000"
+player2.showDetails();                              // Call for 'player2' details
+// result: "Fred has a rank of: 5; and has a score of: 800"
+
+// It appears quite loose when using OO in Javascript here, because it is enough to get most things done for simple scripting.
+// and it is adequate to do most important task of JS here: work with the window object and the document object.
+ */
+
+
+// DOM: The Single Most Important skill for Javascript programmer is to understand DOM, and how to use JS to do things inside DOM.
+
+/*
+// Document Object Model (DOM) can be considered as a tree structured objects (could also be called nodes), an idea or an agreed-upon terminalogy
+                                    HTML (document)
+                                    /                        \
+                            HEAD                        BODY
+                                |                           /    |    \
+                            TITLE                      h1  p    ul
+                                                                     /  |  \
+                                                                   li   li   li
+*/
+
+// Nodes and elements: Officially there are 12 node types available: https://developer.mozilla.org/en-US/docs/Web/API/Node
+// JS focus on the first 3 node types: Element, Attribute, Text,
+
+/*
+<ul id="optionList">
+    <li>This is the first option</li>
+    <li>This is the second option</li>
+    <li>This is the third option</li>
+</ul>
+
+Element nodes: 'ul', 'li';          // All Tags, but it does not contain texts. BTW, the whole section can also be treated as one element node.
+Attribute node: 'id="optionList"';
+Text nodes: 'This is ...'
+*/
+
+
+// Working with DOM: Make sure the element is unique
+
+//Example 1:    document.getElementById("someId");              // The most commonly used method of DOM;  --> pay attention to 'Id'
+var myElement = document.getElementById("optionList");
+// This will lead me to <ul id="optionList"> tag, that I can then navigate upwards or downwards, CRUD things from that handle point on.
+
+// Example 2: document.getElementsByTagName("a");         // Second most commonly used one;  --> pay attention to 'Elements'
+var myOptionList = document.getElementsByTagName("li");
+// This will create an Array of my option lists. Again that I can start to CRUD things from these handle points
+// if "li" was replaced by "a": because "a" tag does not exist here, an empty Array will be created instead.
+// But no handle point and therefore nothing can be done inside the document.
+
+// Example 3:
+// Method .getAttribute("name") will show you the value of that attribute name is.
+// Method .setAttribute("name","value") will update the value of that name; and if that name doesn't exist yet, it will create its name &. value.
+/*  var mainContent = document.getElememtById("mainContent"); mainContent.setAttribute("align","right");     */
+// It would make mainContent's internal HTML to align to right side on webpage (when user's browser presenting it). Usual habit is to align to left by default
+
+// Create DOM Content:
+<li>Create the Element</li>
+<li>Add it to the Document</li>
+/*
+<ul id="optionList">
+    <li>This is the first option</li>
+    <li>This is the second option</li>
+    <li>This is the third option</li>
+</ul>
+var myList = document.getElementById("optionList");             // define myList as the <ul>, so that I can add one more <li> under it, appended as last option
+
+var myNewElement = document.createElement("li");                // create object 'myNewElement' as a <li> object
+myList.appendChild(myNewElement);                          // append it under <ul> as <li> object. Now this tag has been added into the DOM tree under <ul>
+myNewElement.innerHTML = "This is new option";        // Add text into the <li></li> tag. --> pay attention to 'innerHTML'  :: JS is case-sensitive;
+// Optional: another way to assign innerHTML is to create TextNode instead:
+var myText = document.createTextNode("This is new option");
+myNewElement.appendChild(myText);                       // It reachs the same result as using innerHTML method;
+
+// Alternative method: .insertBefore(newElement,existingElement);           // so that provide more flexibility of where the new element will be added;
+var myNewElement = document.createElement("li");
+var secondItem = document.getElementsByTagName("li")[1];            // This turns identify the second option list item, because array starts from 0;
+myList.insertBefore(myNewElement,secondItem);                       // Insert before second item, so that it becomes 2nd item itself.
+// next step is as usual, add text into this <li> object; using one of two methods above.
+ */
+
+
+
+
+
+
+
+
+
+
+
 
 
 
