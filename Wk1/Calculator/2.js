@@ -34,35 +34,38 @@ function subtract(a,b) {
 var st2 = "";       // String to be displayed on result screen;
 
 $(function() {
-    $(".buttons").click(function() {
+    $(".buttons, #btclr").click(function() {
         var st1 = this.innerHTML;
         st2 = st2 + st1;
         var myDisplay = document.getElementById("result");
         myDisplay.innerHTML = st2;
-        console.log(st2);
         switch(st1) {
             case "Clear":
                 myDisplay.innerHTML = "#";
                 break;
             case "=":
-                st2 = st2 - "=";
-                if (st2.indexOf("+") !== -1) {
-                    var arr1 = st2.split("+");
-                    myDisplay.innerHTML = add(arr1[0].toString(), arr1[1].toString());
+                var arr0 = st2.split("=");
+                var st3 = arr0[0];
+                if (st3.indexOf("+") !== -1) {
+                    var arr1 = st3.split("+");
+                    myDisplay.innerHTML = add(parseFloat(arr1[0]), parseFloat(arr1[1]));
+                    break;
                 }
-                else if (st2.indexOf("-") !==-1) {
-                    var arr2 = st2.split("-");
-                    subtract(arr2[0], arr2[1]);
+                else if (st3.indexOf("-") !==-1) {
+                    var arr2 = st3.split("-");
+                    subtract(parseFloat(arr2[0]), parseFloat(arr2[1]));
+                    break;
                 }
-                else if (st2.indexOf("*")) {
-                    var arr3 = st2.split("*");
-                    multiply(arr3[0], arr3[1]);
+                else if (st3.indexOf("*")) {
+                    var arr3 = st3.split("*");
+                    multiply(parseFloat(arr3[0]), parseFloat(arr3[1]));
+                    break;
                 }
                 else {
-                    var arr4 = st2.split("/");
-                    divide(arr4[0], arr4[1]);
+                    var arr4 = st3.split("/");
+                    divide(parseFloat(arr4[0]), parseFloat(arr4[1]));
+                    break;
                 }
-                break;
         }
     });
 });
