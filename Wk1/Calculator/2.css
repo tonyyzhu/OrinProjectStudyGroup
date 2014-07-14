@@ -1,0 +1,41 @@
+body {
+    width:70%;
+    margin-left: auto;
+    margin-top: auto;
+}
+
+.buttons {
+    background-color:blue;
+    color:white;
+    width:35px;
+    height:45px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 10px black solid;
+    font-size: 45px;
+    float: left;
+}
+
+#btclr {
+    background-color:blue;
+    color:white;
+    width:130px;
+    height:45px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 10px black solid;
+    font-size: 45px;
+    float: left;
+}
+
+#result {
+    background-color:black;
+    color:white;
+    width:230px;
+    height:45px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 10px black solid;
+    font-size: 45px;
+    float: left;
+}
