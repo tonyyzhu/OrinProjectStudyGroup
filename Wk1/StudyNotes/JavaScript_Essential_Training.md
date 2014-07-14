@@ -568,6 +568,27 @@ function addCrossBrowserEventListener (elementName, eventName, functionName) {
  */
 
 
+// Click Load issue and solution without using JQuery ===> Well, everyone uses JQuery now...
+// If you put <script src="javascript.js" type="text/javascript"></script> in the <head></head> section,
+// some function won't work (because element does not exist when browser reading it).
+// Solution is to create an 'window.onload' function that contains all those event handlers inside,
+// because 'window' is the top element of DOM, even before 'document'.
+
+/*
+function prepareEventHandlers() {
+    // place all those Event Handlers below;
+    var myImage = document.getElementById("mainImage");
+    myImage.onclick = function() {
+        alert("You clicked the image");
+    }
+}
+
+window.onload = function() {
+    // only one window.onload funtion can exist inside one document;
+    // invoke the Handlers;
+    prepareEventHandlers();
+}
+*/
 
 
 
