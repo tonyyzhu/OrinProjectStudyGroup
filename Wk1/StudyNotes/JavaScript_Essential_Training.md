@@ -665,6 +665,11 @@ myImage.onclick = function() {
     clearInterval(intervalHandle);          // Manual step++ 5s each, until click to stop it -- clear 'setInterval()' --
 };
 
+// Another clever way to do it, is to use windows.onload function to get it auto rotate once the page is loaded:
+windows.onload = function() {
+    setInterval(changeImage, 3000);
+};
+
 // I should use this techeque in Jin's School Web Page !!!
 ====================================
  */
@@ -677,8 +682,9 @@ myImage.onclick = function() {
 // call myfunction() and get 'undefined' error, when real one is 'myFunction()': case-sensitive;
 // similar ones like '.getElementById' (not 'D') or 'getElementsByTagName' (forgot 's');
 // or spelling issue like 'myArray.revers()' (missing 'e' in 'reverse');
+// or: forgot those systems that are zero-based, such as Array.length is 3, but you're calling Array[3]...
 
-// next level: call function before the element becomes part of DOM yet,  gives you 'undefined' error -- use window.load function or jQuery;
+// next level: call function before the element becomes part of DOM yet,  gives you 'undefined' error -- use window.onload function or jQuery;
 // Assignment instead of equal: if (a = b) {//action;}  --> should be '==' instead of '=';  BTW, technically it is not an error ?!
 /*    Missing a parameter in a function that may not reported by firebug as an error, but result expectable:
 
@@ -696,6 +702,29 @@ var result = calculateSum(500,1000);   console.log(result);
 
 // For the same token, the 'Script' Tab will give you all .js files, as well as those inline scripts buried inside HTML file in runtime.
 
+// Common firebug usage below. Further/other details check out getfirebug.com.
+// Or: google "firebug tutorial", and then check out those videos and websites.
+
+/*        firebug troubleshooting: HTML, CSS, JS: after live-editing works,
+            apply them as source code or 'custom code' if using WordPress or its themes.
+
+After Setting up Break Point on darker lines (JS statements only), then there are 4 tools that you can use:
+1. Right-click on the break point, you can put in conditions for that break point to stop. This is particularly helpful when debugging loops.
+The program will only stop when the condition is meet. Then you can check the result/status at the 'watch' tab of the right panel.
+2. Triangle point to right icon is 'Continue(F8)'. Click on it is to continue previous run from this break point onwards, until reach another break point.
+Then watch the 'Watch' tab on the lower right panel to see the changes.
+3. Next to 'Continue' is 'Step into(F11)', which is to line-by-line running of the program, one line per step & stop.
+4. The middle one is 'Step Over(F10)' -- It would go over a function as breakpoint without getting into its internals.
+It is not a skip a function, but execute the function and get the result of that function, and move on to next statement. No 'Step into' that function, so save time.
+5. The last one is 'Step Out(Shift+F11)' -- It will return you to where you made the call into the current function. Or one step back out of the current encapulation.
+When you are in a loop or a function, use this icon to get out of it.
+
+As long as you watch the right panel carefully, or move the cursor over the variables in the left panel,
+Do it step by step without jumping, it would be 'easy' to find out what went wrong.
+
+"It is gurrenteed that all HTML/CSS/JavaScript issue can be solved by using this tool."
+
+ */
 
 
 
