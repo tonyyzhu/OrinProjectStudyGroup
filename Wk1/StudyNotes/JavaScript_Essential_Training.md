@@ -590,11 +590,84 @@ window.onload = function() {
 }
 */
 
+Week2:  15/7/2014 Continue...
+-------------------------------------------
+
+// On Focus and On Blue effects for forms filling(such as email required field).
+// Also can use regular expression to match the patterns to examine if the email address left is valid or not, but not in this paragraph.
+
+/*
+
+// Part one: HTML file:  Below is just small block of code that is related to the issue
+<form id="frmSupport" name="frmSupport" method="post" action="support_process.htm">
+    <fieldset id="quickSupport">
+        <p>
+            <label for="email">Email:</label>
+            <input type="text" value="your email" name="email" id="email" tabindex="20" />
+        </p>                    // Pre-set value="your email", so to remind user to put in email address when check this field;
+    </fieldset>                 // It is always 'value' field, not 'innerHTML' field.
+
+// Part two: js file
+
+var emailField = document.getElementById("email");
+
+emailField.onfocus = function() {
+    if (emailField.value == "your email") {
+        emailField.value = "";                  // When user click this field (called 'onfocus'), take pre-set value away
+    }                                                       // to allow user key in their own address. Watch out for 'onfocus' all lowercase;
+};          // Watch out for ';' --> because '=' so it is not a single function() call.
+
+emailField.onblur = function() {
+    if (emailField.value == "") {               // When user left this field (called 'onblur'), but not key in anything;
+        emailField.value = "your email";    // Put in pre-set value again, to remind him/her for the task. Watch out lowercase 'onblur'.
+    }
+};         // Watch out for ';' --> because '=' so it is not a single function() call.
+
+ */
+
+// Timer:  'setTimeout(functionname, interval in ms (so 5000 = 5 seconds))' :: call a function after x ms.
+/*
+function simpleMessage() {
+    alert("Just a pop-up message here!");
+}
+
+setTimeout(simpleMessage, 5000);
+*/
+// It also has its evil twins: clearTimeout(functionname, interval), which is stop this postpone action.
+
+// Another similar special effort function: most commonly used to rotate images on the webpage for certain inteval
+
+/*  example 1: simple and straight forward one
+setInterval(simpleMessage, 5000);
+*/
 
 
+/* example 2: rotate image, and stop rotating when user clicked on an image:
 
+var myImage = document.getElementById("mainImage");
+var imageArray = ["_images/overkook.jpg", "_image/winery_sign.jpg", "_image/lunch.jpg",
+                                "_image/bigSur.jpg", "_image/flag_photo.jpg", "_image/mission_look.jpg"];
+var imageIndex = 0;
 
+function changeImage() {
+    myImage.setAttribute("src", imageArray[imageIndex]);            // set source of image to the array;
+    imageIndex++;                                                                         // go through images from first one to last one;
+    if (imageIndex >= imageArray.length) {
+        imageIndex = 0;                                                                     // if last one, re-start from first one again;
+    }                                     // NOTICE: There is no loop here !!!
+}                                        // step++, but wait for repeated call again to show next image... Very Clever!
 
+// setInterval(changeImage, 5000);           // calling function every 5 seconds, instead of loop statement !!
+
+// Comment out above solution for a MORE Clever solution:
+var intervalHandle = setInterval(changeImage, 5000);
+myImage.onclick = function() {
+    clearInterval(intervalHandle);          // Manual step++ 5s each, until click to stop it -- clear 'setInterval()' --
+};
+
+// I should use this techeque in Jin's School Web Page !!!
+====================================
+ */
 
 
 
