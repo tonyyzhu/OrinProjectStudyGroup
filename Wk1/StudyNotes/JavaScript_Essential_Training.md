@@ -688,4 +688,14 @@ var result = calculateSum(500,1000);   console.log(result);
 
  */
 
+// Use firebug or similar tool will give you runtime document, which is more reliable than source code;
+// or you right-click on webpage and then 'view page source';
+// because javascript could dynamically change the source HTML file on-the-fly...
+// Also you could right click on one element to check its DOM attributes (of course you could start from DOM tab as well)
+// There are far more DOM nodes than you could realize, even on a simplest web page...
+
+// For the same token, the 'Script' Tab will give you all .js files, as well as those inline scripts buried inside HTML file in runtime.
+
+
+
 
