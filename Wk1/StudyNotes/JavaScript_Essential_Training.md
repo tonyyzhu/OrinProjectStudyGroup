@@ -670,6 +670,22 @@ myImage.onclick = function() {
  */
 
 
+// Common mistakes and debugging: Using firebug & Firefox. Check spelling/grammer in details !!!
+-------------------------------------------------------------------------------------------------------------------------------------
 
+// Syntax error: forgot to close () {} [] "" '', or ; etc.
+// call myfunction() and get 'undefined' error, when real one is 'myFunction()': case-sensitive;
+// similar ones like '.getElementById' (not 'D') or 'getElementsByTagName' (forgot 's');
+// or spelling issue like 'myArray.revers()' (missing 'e' in 'reverse');
+
+// next level: call function before the element becomes part of DOM yet,  gives you 'undefined' error -- use window.load function or jQuery;
+// Assignment instead of equal: if (a = b) {//action;}  --> should be '==' instead of '=';  BTW, technically it is not an error ?!
+/*    Missing a parameter in a function that may not reported by firebug as an error, but result expectable:
+
+function calculateSum(a, b, c) { return a+b+c; }
+var result = calculateSum(500,1000);   console.log(result);
+// result:  NaN   (because 'c' is taking default value of 'undefined'; and it is not technically an error)
+
+ */
 
 
