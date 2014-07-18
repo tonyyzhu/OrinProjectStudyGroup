@@ -726,10 +726,156 @@ Do it step by step without jumping, it would be 'easy' to find out what went wro
 
  */
 
-Week Two 17/5/14    Continue:
+Week Two 17/5/14  &. 18/5/14  Continue:
 -----------------------------------------
 
 // Form has the following properties and events:
+/*
+<form id="frmContact" name="frmContact" method="post" action="thanks.htm">
+    <fieldset id="personalInfo">
+        <legend><strong>Personal Information</strong></legend>
+        <p>
+            <label for="name">Name</label>
+            <input name="name" type="text" class="text" id="name" tabindex="100">
+        </p>
+        <p>
+            <label for="email">Email</label>
+            <input name="email" type="text" class="text" id="email" tabindex="110">
+        </p>
+    </fieldset>
+ */
+
+// Field values
+- document.forms.formid;
+- document.forms.formid.formname;
+- email.value;
+
+// Form events
+- onfocus:      go into the field
+- onblue:       leave the field
+- onchange:   chnge into or out of the field
+- onkeypress
+- onkeydown
+- onkeyup
+
+// Checkbox
+- Value: myCheckBox.checked:       true or false
+- Event: onclick; onchange; --> you can use either
+
+// Field has selection list, instead of single value:
+/* main properties: mySelect.type == select-one, or: select-multiple
+    if select-one, mySelect.selectedIndex (first one would be '0', next one '1', and go upwards for the list)
+    if select-multiple: mySelect.options[x].selected == true or false
+
+    main events to trigger above:       .onchange;
+*/
+
+// for the form itself, main event is .onsubmit. You can use 'return false' to do sth else before it be submitted to the server:
+- check/validate input,
+- stop submit, and other things
+// so that those tasks can be done on the client end, before request round trip info from server and do calculations on server.
+
+/*
+// handle the form submit event, to prevent email field be empty:
+function prepareEventHandlers() {
+    if (document.getElementById("email").value == "") {
+        document.getElementById("errorMessage").innerHTML = "Please provide at least an email address!";
+        return false;           // Stop form from submitting -- force user to enter email field value first;
+    }
+    else {
+        document.getElementById("errorMessage").innerHTML = "";         // no error message;
+        return true;        // allow form submit to server!
+    }
+};
+
+// when the document loads
+window.onload = function() {
+    prepareEventHandlers();
+}
+*/
+
+// example of hide a section, but enabled by click a box:
+/*     Show or Hide sections of a form
+function preparePage() {                                                                    // this Event Handler is also in window.onload list;
+    document.getElementById("brochures").onclick = function() {         // if you click on the field with ID of "brochures";
+        document.getElementById("brochures").checked() {                    // 'true'
+            // use CSS Style to show it
+            document.getElementById("tourSelection").style.display = "block";       // .style.display to "block" value is the default way to show the hidden section;
+        }
+        else {                                                                                            // 'false'
+            // hide the div with id="tourSelection" inside the HTML file, which is the whole section that to be hide or show, controlled by box with ID of "brochures";
+            document.getElementById("tourSelection").style.display = "none";        // to "none" is the default way of hide the section;
+        }
+    };
+    // now hide it on the initial page load;
+    document.getElementById("tourSelection").style.display = "none";                // It is called 'progressive enhancement', just in case someone has JS disabled;
+    // If JS disabled, everything still works as it is. But if JS enabled, the enhancement wil make things better.
+}
+*/
+
+// Use JS to make CSS dymanic:
+
+// Using inline style:      myElement.style.color ="#ff0000"; myElement.style.left = "40px"; myElement.style.backgroundColor = "white";
+// in CSS, you use background-color, or font-weight as lable( or name, using hyphens to connect two words to form a string).
+// in JS, it got to be changed using camelCase, like .fontWeight, or .backgroundColor. Just different syntax but with same meaning. <'-' is JS means 'minus' or 'subtract' as reserved world>
+
+// Setting the class:       myElement.className = "someCSSclass";       // 'class' is a reserved word, so use 'className' instead. Or, clear it by =""; (empty string)
+/*
+// prevent a form from submitting
+this function is also in window.onload
+function preparePage() {
+    document.getElementById("mainContent").onclick = function() {                                       // if user clicks on the page
+        if (doucment.getElementById("mainContent").className == "example") {
+            doucment.getElementById("mainContent").className = "";                                       // if it already use "example" class in CSS, reset it to be none;
+        }
+        else {
+            doucment.getElementById("mainContent").className = "example";                           // if not, set CSS class to example, which is right-align, white title line, different font family and size.
+        }                                                                                                                                       // so that the click on the page would change its presentation style.
+    };
+}
+ */
+
+/*        This example will put an animated box 'section of<div id="join" ...>' across user's screen for the web page, to push people sign up for the newspaper.
+// How does that work?
+- window.onload will call main program of set animation 5 seconds after user opened this page;
+- main program beginAnimate() will call program animateBox every one of 20th second (TV is 30 frames/second. Here is 20 frames/second, which is good enough);
+- Program animateBox will move the box for 5 px from left to right each time. And if reached 900px (out of webpage frame), stop 20 frame/second animation.
+- Very clever idea, only people who worked in digital media could come up with this idea...
+
+var currentPos = 0;
+var intervalHandle;
+
+function beginAnimate() {
+    document.getElementById("join").style.position = "absolute";
+    document.getElementById("join").style.left = "0px";
+    document.getElementById("join").style.top = "100px";
+    // cause the animateBox function to be called
+    intervalHandle = setInterval(animateBox,50);
+}
+
+function animateBox() {
+    //set new position
+    currentPos+=5;
+    document.getElementById("join").style.left = currentPos + "px";
+    //
+    if (currentPos > 900) {
+        //clear interval
+        clearInterval(intervalHandle);
+        // reset custom inline styles
+        document.getElementById("join").style.position = "";
+        document.getElementById("join").style.left = "";
+        document.getElementById("join").style.top = "";
+    }
+}
+
+window.onload = function() {
+    setTimeout(beginAnimate,5000);
+}
+ */
+
+
+
+
 
 
 
