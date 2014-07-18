@@ -45,6 +45,24 @@ It is free and available on all kind of platforms. Including debug feature, Git 
 Also installed Firebug to latest Firefox Browser, as one of two major tools used here, for debuging and stepping tools.
 It also can allow user to directly execute JavaScript programs without using a web page. (Enable Console Panel &. Command Editor Panel)
 
+Other on-line tools includes:
+- http://html5.validator.nu/
+- http://closure-compiler.appspot.com/home  ==> (Google Closure Compiler)-(Other similar tools like JSMin, YUI Compressor (Yahoo UI Compressor))
+- http://jslint.com/
+- http://caniuse.com/
+- ATOM (mimic of Sublime Text but not ready yet. On the other hand, ST3 has stalled.)
+
+// Javascript Libraries:  First 4 are general purpose Libraries. Most of them are free and can be used/motified freely by just linking them to your program.
+- jQuery: Most popular one that everyone uses (Clear winner of all Libraries), cross-browser support, most general purpose codes, ...
+- Closure
+- MooTools
+- YUI Library
+- Unbeatable Javascript Tools
+- Lightbox2: special purpose one to pop up images on your website;
+- script.aculo.us
+- moo.fx
+- CurveCorners:  (do we still need this when HTML5  gets similar function? worth checking to find out)
+
 
 // Authoritive Reference Guide: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 ==========================================================
