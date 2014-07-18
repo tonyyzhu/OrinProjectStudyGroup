@@ -62,6 +62,7 @@ Other on-line tools includes:
 - script.aculo.us
 - moo.fx
 - CurveCorners:  (do we still need this when HTML5  gets similar function? worth checking to find out)
+- Modenizr: link to http://www.modernizr.com/
 
 
 // Authoritive Reference Guide: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
@@ -1024,7 +1025,8 @@ var name = localStorage["username"]         // get
 // HTML5: Local Storage and Offline Applications in Depth; from Lynda.com
 
 
-/*           Web Worker example, that makes Javascript function works in the background: like multi-threading in other languages:
+/*  Web Worker example, that makes Javascript function works in the background: like multi-threading in other languages;
+// This is a new feature addition to JS, that it wasn't able to do before (Only single thread before?);
 var worker = new Worker("anotherjavascriptfile.js");
 
 // get ready to receive messages from the worker;
@@ -1050,6 +1052,94 @@ if (document.getElementsByClassName) {
      // it doesn't exist on this browser, so this new HTML5 feature is not supported by this browser;
      // ....      (we got to do something else instead, or just ignore it);
 }
+
+
+// Modernizr:   download a copy from http://www.modernizr.com/, and link it to your webpage;
+// Because you know exactly what new feature you used, so you can click on 'production' and then select the only options you need,
+// to build a customized version of Modenizr for your webpage, that would make it extremely lightweight, and faster to download & load.
+
+// Important: Put it in the <head></head> section of your document, so that it runs before <body></body> section loads;
+// It will check over 40 features/objects supported by this browser or not - verification before code loads;
+// It could also use 'shem' or other features, to try to load the alternative methods to support the usage when browser doesn't support sth;
+// But it is beyond this course, so I need to find it out by myself...
+
+if (Modernizr.video) {
+    // supports, do sth;
+} else {
+    // Doesn't support, do sth else;
+}
+
+// Strict Mode: hold your code beyond normal standards (JSLint.com) -- It would help you detect logic issue, even when grammer/syntax has no problem;
+// By adding the following line to the first line of JS file;
+"use strict";
+
+// or add it into the function() as first line;
+
+// Warning: Don't mix strict mode file with non-strict mode file (or code won't run due to strict mode), when combine multiple .js file into a big one;
+// It is said that it could be turned on feature by feature, but didn't say how;
+// Not all browser support strict mode!
+
+
+// Javascript to avoid:
+
+- document.write("Here is some <em>important</em> content");
+// Common in very early days, even early training courses. Issue: it only works when the page was created at first time. And it doesn't work with DOM!
+// If it was put into a function(), it would destry the whole original page with that line. ==> should avoid to use it at all !
+// Solution: use 'innerHTML' instead;  or use JS to creating or manipulating individual DOM element text nodes.
+
+- Browser Sniffing: really old-school staff; stoped usage at least 6 years ago. code like below;
+/*
+if (navigator.userAgent.indexOf('Netscape')) {
+    // ...
+}
+
+or:
+
+if (navigator.appName == 'Microsoft Internet Explorer') ...
+*/
+// In general, we should use 'Feature Detection' now, instead of Browser or Platform Sniffing, in modern days.
+// You would only use this Sniffing feature  in very rare occusion, like issue with particular version of particular browser.
+
+- EVAL: powerful little tool that turn a feature into a function to execute.
+/*
+var a = "alert('", b = "hello", c = "');";
+eval (a + b + c);           // result: it would alert "hello" ==> combine strings and execute it as if it is a function like "alert('hello');";
+*/
+// Issue:   This is really an ugly code and hard to understand, that there is always better ways to do things under any circumstances, and be more efficient;
+// It could lead to Security issue, because it execute codes stored in variables.
+// If the program reads value from external link or input fields (such as your email request field to Internet visitors),
+// it could lead to code injection, causing unexpected results. <hacking!>
+// So it is generally agreed upon that 'eval' is a bad thing and should be avoided.  You might see it, but don't do it...
+
+- Pseudo-Protocols:
+/*
+<p>Inside your HTML, you may find:
+    <a href="javascript:someFunction()">this</a>
+    // this is use 'someFunction()' to replace normal HTTP/HTTPS protocol link or button to do sth, so the name 'Pseudo-Protocol';
+</p>
+ */
+
+// Why it is bad:
+// 1. You are mixing HTML with your script, which is against the principle of separation of HTML/CSS/Javascript;
+// 2. If user's browser disabled Javascript, this code is useless;
+/*      The temp solution is below, which is still not the best:
+<p>A preferable way is
+    <a href="nojavascript.html" onclick="someFunction(); return false;">this</a>        // 'return false' will stop default behavior (follow the HTML link);
+</p>
+ */
+// The better solution is to use Event Handler to handle the situation inside JavaScript code,
+// which is the concept of 'progressive enhancement'; and not to mix things up here using inline code.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
