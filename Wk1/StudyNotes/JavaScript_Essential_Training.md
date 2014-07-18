@@ -907,6 +907,113 @@ if (x) {
 // BTW, my thoughts: Don't put minified code into this check...
 
 
+// Javascript Libraries:  First 4 are general purpose Libraries. Most of them are free and can be used/motified freely by just linking them to your program.
+- jQuery: Most popular one that everyone uses (Clear winner of all Libraries), cross-browser support, most general purpose codes, ...
+- Closure
+- MooTools
+- YUI Library
+- Unbeatable Javascript Tools
+- Lightbox2: special purpose one to pop up images on your website;
+- script.aculo.us
+- moo.fx
+- CurveCorners:  (do we still need this when HTML5  gets similar function? worth checking to find out)
+
+// When you have multiple js files linked from your HTML file, the order of the files and where those files are linked matters.
+/* ...
+    <div>
+        <p>whatever</p>
+    </div>
+        <script type="firstone.js"></script>
+        <script type="another.js"></script>
+        <script type="externalLinkedOneFromOtherWebSite.js"></script>
+        // It would be better to combine those small .js files together, like:
+        // <script type="combinedscript.js"></script>, to replace above all .js files;
+</body>
+*/
+// Browser will send one HTTP request for each js file, one after another finished. This slows down the web page loading
+
+// Also, if one .js file calls another one, or an external library (such as jQuery library); it would be better to load those depency files first, in order.
+// Typically, it would load jQuery first, then each one following the order of calls, as if you are defining functions.
 
 
+// JQuery: Check out development version (readable one) from its website. When using jQuery in your code, just need to link to minified one as .min.js;
+/*        For example:
+document.getElementById("myDiv").className = "highlight";
+// can be transferred to be jQuery statement below:
+jQuery("#myDiv").addClass("highlight");         // or $() instead jQuery(); shorten the codes.
+
+// The advantage of using jQuery are:
+- If there was no id as "myDiv", you can still use jQuery to get to it;
+// "#myDiv" is a selector (borrowed from CSS), also ".someClass", "p.description", etc; even :first, :contains(), :visible etc as selector;
+// So selector can be not only class, but also tag, last li, any paragraph that contain the word "packages", etc;
+- addClass("highlight") as a method, is more flexible than old method, such as removeClass(); toggleClass(); etc.
+- very easy to do animation using methods, or working with events;
+- $(document).read(function()) is better than window.onload={};
+// when you are doing a large program, you could accidentally write multiple window.onload statements, and only the last one takes effects.
+// But using jQuery, all of them works no matter where they are or how many times they appear.
+
+// Use Google CDN (Content Distribution Network) version of jquery.min.js instead of your own downloaded copy, or Microsoft or Yahoos;
+// Because their CDN always provides faster download than from your own server (using load balancing, failover, no bandwidth concerns, and other features etc.);
+// such as: src = "http://ajaxgoogleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js". It improves:
+- Speed / Redundancy;
+- Bandwidth;
+- Parallel downloads;
+// when multiple site using the same CDN .min.js file, this file will be shared by multiple pages from the same CDN.
+// This triggers the browser to automatically cache this library in its cache memory, to make things even faster
+// Check out the following link for more details: https://developers.google.com/speed/libraries/; for the hosted libraries. Or search for 'CDN'.
+// Using HTTP &. HTTPS pages: Google default showing https://..., just get rid of 's' would also work. Just copy that path to that library and then link it into your code.
+// Or just use src = "//ajaxgoogleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
+// The only time that teacher won't use the CDN link, is to develop for Intranet (all things are on local LAN).
+ */
+
+
+// HTML5 features:          It makes Flash redundant, and standardize HTML across all devices. The implementation is piece by piece, which is why latest version of browser matters.
+- Video / Audio support
+- Geolocation
+- Local storage
+- Drag and Drop
+- Canvas element (allow us to draw on the screen)
+- New form elements
+- Offline storage
+- Web Worker: or multi-threading in other languages;
+
+// New method example:  (besides old ById and ByTagName method):
+var a = document.getElementsByClassName("myClass");
+
+// Also video support example below:
+/*
+<video id="myVideo" controls preload="auto">
+    <source src="videofile.mp4" type="video/mp4" />
+    <source src="videofile.webm" type="video/webm" />
+    <source src="videofile.ogv" type="video/webm" />
+    <!-- if video is not supported -->
+    <p>Your browser does not support HTML5 video.</p>
+</video>
+
+myVideo.addEventLister("ended", function() {                        // Event could also be: "play", "pause";
+    // code to execute when the video finishes
+}, false);                                                                      // Method could also be: .play(); .pause(); .currentTime = 0;
+// Check out "HTML5: Video and Audio in Depth" from Lynda.com
+----------------------------------------------------------------------------------------
+ */
+
+//HTML5 Storage:  below is Local Storage Example:
+localStorage["username"] = name;            // set
+var name = localStorage["username"]         // get
+
+// Offline Storage; Web SQL; IndexedDB:
+// HTML5: Local Storage and Offline Applications in Depth; from Lynda.com
+----------------------------------------------------------------------------------------------------
+
+/*           Web Worker example, that makes Javascript function works in the background: like multi-threading in other languages:
+var worker = new Worker("anotherjavascriptfile.js");
+
+// get ready to receive messages from the worker
+worker.onmessage = function(e) {
+    console.log("The worker called me!");
+};
+
+// send message to the worker
+worker.postMessage("firstFunction");
+*/
 
