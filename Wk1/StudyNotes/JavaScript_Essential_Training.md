@@ -967,18 +967,20 @@ jQuery("#myDiv").addClass("highlight");         // or $() instead jQuery(); shor
  */
 
 
-// HTML5 features:          It makes Flash redundant, and standardize HTML across all devices. The implementation is piece by piece, which is why latest version of browser matters.
+// HTML5 features:          It makes Flash redundant, and standardize HTML across all devices.
+// The implementation is piece by piece, which is why latest version of browser matters. It is not finished yet...
 - Video / Audio support
-- Geolocation
-- Local storage
-- Drag and Drop
-- Canvas element (allow us to draw on the screen)
+- Geolocation:              longatude and lateatude info;
+- Local storage:            Be able to store more data, rather than just simple cookies;
+- Drag and Drop:          Build-in support of Drag & Drop, not only for the items of the same page, but also between the websites (!!) ;
+- Canvas element:        allow us to draw directly on the screen;
 - New form elements
-- Offline storage
-- Web Worker: or multi-threading in other languages;
+- Offline storage:          website can store significate amount of data on client end, and work without Internet connection to the server (web application);
+- Web Worker:               or multi-threading in other languages;
 
-// New method example:  (besides old ById and ByTagName method):
+// New method example:  (besides old ById and ByTagName method);
 var a = document.getElementsByClassName("myClass");
+// Pay attention to 's' in .getElementsByClassName();
 
 // Also video support example below:
 /*
@@ -994,8 +996,7 @@ myVideo.addEventLister("ended", function() {                        // Event cou
     // code to execute when the video finishes
 }, false);                                                                      // Method could also be: .play(); .pause(); .currentTime = 0;
 // Check out "HTML5: Video and Audio in Depth" from Lynda.com
-----------------------------------------------------------------------------------------
- */
+*/
 
 //HTML5 Storage:  below is Local Storage Example:
 localStorage["username"] = name;            // set
@@ -1003,17 +1004,34 @@ var name = localStorage["username"]         // get
 
 // Offline Storage; Web SQL; IndexedDB:
 // HTML5: Local Storage and Offline Applications in Depth; from Lynda.com
-----------------------------------------------------------------------------------------------------
+
 
 /*           Web Worker example, that makes Javascript function works in the background: like multi-threading in other languages:
 var worker = new Worker("anotherjavascriptfile.js");
 
-// get ready to receive messages from the worker
+// get ready to receive messages from the worker;
 worker.onmessage = function(e) {
     console.log("The worker called me!");
 };
 
-// send message to the worker
+// send message to the worker;
 worker.postMessage("firstFunction");
 */
+
+/*
+Feature detection: Because HTML5 is rolling out piece by piece, and not every browser supports everything on every
+version (comparing IE8, 9, 10; not to mention IE 7 and previous versions).  So, we have to use JS code to find out if
+user's browser supporting this feature we are using or not, by using '.getElementsByClassName' method:
+*/
+
+/*
+if (document.getElementsByClassName) {
+    // it exists, then we can use it;
+    // ...
+} else {
+     // it doesn't exist on this browser, so this new HTML5 feature is not supported by this browser;
+     // ....      (we got to do something else instead, or just ignore it);
+}
+
+
 
