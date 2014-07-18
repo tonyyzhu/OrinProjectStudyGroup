@@ -874,6 +874,37 @@ window.onload = function() {
  */
 
 
+// Style guide, to make your code readable, consistent, accepted best practices.
+// Javascript is 'published' on the web, that everyone visit your webpage get it, and can read it in plain text if they want to. It is most publically viewable code in the world.
+
+- Naming conventions: <letters, numbers, $, _> form a name of variable or function, but it is best to make it meaningful in camelCase.
+- Uppercase First Letter for an Object.
+- Brace style:              // using traditional C style, not PASCAL style or other styles;         // Always use braces, even when there is only one line inside;
+/*
+if (x) {
+    // ...
+} else {
+    //...
+}
+ */
+
+// The best practice is to define a function before calling it, although it can be defined later inside the program.
+// Always use var to define variables
+// Always use ";" to end a statement
+// search for "javascript style guidelines" on the web, to get more formal guides from Yahoo, Google, or Mazilla.
+
+// Javascript Minification: compact code -- get rid of comments, rename variables/function to one letter ones, put everything onto one line.
+// Only Human needs meaningful names, white space and comments. Browser does not need them. JQuery Example: readable file size 559KB, minified 23KB.
+// Minification to reduce file size to make it transfer faster/load faster. It does not 'compile' or obfuscation.
+// Many tools available, such as JSMin, YUI Compressor (Yahoo UI Compressor), Google Closure Compiler;
+// You can download one of them or just use them online. But common practice is to use Google one online, which also has warning or error reminders.
+// Keep an copy of original one for later reading/maintanence.
+
+// jslint.com: The best JavaScript code checker. It supposed to be very picky.
+// It produces huge number of issues even when you put in a perfect working JS program. Don't panic: it is making your code perfect, 'better'.
+// You can also dismiss/tolerate some options or define what environment it would be used.
+// It has its own 'perfect' presentation style: such as having a space here and there, to make it more readable. (You don't have to)
+// BTW, my thoughts: Don't put minified code into this check...
 
 
 
