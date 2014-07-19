@@ -14,10 +14,10 @@ M$ created C# for applications working on Windows. Apple created Objective-C for
 HTML/CSS/JavaScript are for web pages and web applications working inside a Web Browser. Just like VBA working inside M$ Office System, or Clarity Report working inside MYOB EXONET.
 
 When we talking about learning something for programming, we really talking about is:
-<li> A Language </li>
-<li> All the frameworks learned with the language </li>
-<li> All the patterns learned to be productive and effective </li>
-<li> All the tools learned that go along with them </li>
+- A Language 
+- All the frameworks learned with the language 
+- All the patterns learned to be productive and effective 
+- All the tools learned that go along with them 
 
 JavaScript was written to support SMALL SNIPPETS of code to modify the DOM state,
 in express tiny little event handlers. It does that very, very well. But, outside of this scope,
@@ -54,6 +54,9 @@ Other on-line tools includes:
 - http://regexpal.com/
 - http://regex101.com/
 - http://www.regexr.com/
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+- https://developer.yahoo.com/performance/
+- 
 
 // Javascript Libraries:  First 4 are general purpose Libraries. Most of them are free and can be used/motified freely by just linking them to your program.
 - jQuery: Most popular one that everyone uses (Clear winner of all Libraries), cross-browser support, most general purpose codes, ...
@@ -66,6 +69,7 @@ Other on-line tools includes:
 - moo.fx
 - CurveCorners:  (do we still need this when HTML5  gets similar function? worth checking to find out)
 - Modenizr: link to http://www.modernizr.com/
+- http://prototypejs.org/
 
 
 // Authoritive Reference Guide: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
@@ -1024,7 +1028,7 @@ myVideo.addEventLister("ended", function() {                        // Event cou
 localStorage["username"] = name;            // set
 var name = localStorage["username"]         // get
 
-// Offline Storage; Web SQL; IndexedDB:
+// Offline Storage; Web SQL(discontinued); IndexedDB:
 // HTML5: Local Storage and Offline Applications in Depth; from Lynda.com
 
 
@@ -1184,14 +1188,100 @@ var myRE = /^hello/;        // ^: at the start of the string;
 
 
 // AJAX: Asynchronous JavaScript and XML. But really, just JS. It doesn't even require XML.
+// It just use JS behind the sence to update some data inside a webpage from the server, without reloading the whole webpage.
+
+// Typical example 1: zoom on an online map from a website, such as Bing Map or Google Map;
+// Typical example 2: type charactors into Google Search lines, Google server will auto update the page with related information, without reload the whole page.
+
+// Step 1: Create the request from the JS to the server
+// Step 2: Let server pass info back to JS, to deal with any response <Asynchronous part here>
+
+/*
+// I: Create Object for the Request;
+var myRequest;
+
+// II. feature check!
+if (window.XMLHttpRequest) {
+    myRequest = new XMLHttpRequest();                                       // Firefox, Safari, and others; except IE;
+} else if(window.ActiveXObject) {
+    myRequest = new ActiveXObject("Microsoft.XMLHTTP");         //IE, but M$ created this object first before anyone else;
+}
+// BTW, use jQuery (which is common practice) would be much easier than above feature check function, esp. for older versions of browsers;
+
+// III: Prepare to Accept the Response, by create an event handler for our request to call back;  ==> This event is quite chatty!
+myRequest.onreadystatechange = function() {
+    console.log("We were called!");
+    console.log(myRequest.readyState);
+    if (myRequest.readyState === 4) {                       // response received;
+        var p = document.createElement("p");
+        var t = document.createTextNode(myRequest.responseText);
+        p.appendChild(t);                                           // append text node to newly created <p> node;
+        document.getElementById("mainContent").appendChild(p);          // add <p> node into the DOM Tree, under "mainContent" <div> node.
+    }
+};
+//.onreadystatechange details: http://www.w3schools.com/ajax/ajax_xmlhttprequest_onreadystatechange.asp;
+// 0: request not initialized;
+// 1: server connection established;
+// 2: request received;
+// 3: processing request;
+// 4: request finished and response is ready;
+
+// IV: Then configure the request and send
+myRequest.open("GET", "http://mysite.com/somedata.php", true);
+// Obviously, some setup in the server side is needed as well;
+
+// V: Any parameters?
+myRequest.send(null);
+
+// 'true' means that Asynchronous, that we are not going to wait for server's response;
+// but let browser to handle it at the background, while we are doing other things at same time;
+// ? Web Worker feature (or multi-threading)
+
+// ...    : If there were other functions here, it would just go on and execute them at same time, without waiting for server's responses at all;
+ */
 
 
+// Prototype
 
+// Traditional way of creating object, object.properties, object.method; does not provide consistancy when repeating this task;
+/*
+var today = new Date();
 
+var playerFred = {name: "Fred", score: 1000, rank: 1};      // create new object;
+playerFred.gameType = "MMORPG";     // add new property; 
+playerFred.logScore = function() {          // add new method;
+    console.log(this.score);
+}
 
+playerFred.logScore();          // call the method;
+ */
 
+// solution is to formalize object with constructors;
 
+/*
+function Player(n, s, r) {
+    this.name = n;                  // use 'this' with parameter, we can standardize objects;
+    this.score = s;                     // You can continue to add more properties later on or whenever, due to JS as flexible language;
+    this.rank = r;
+}
 
+Player.prototype.logInfo = function() {
+    console.log("I am", this.name);                 // Also, you can add method whenever & wherever you see fit;
+}
+
+Player.prototype.promote = function() {
+    this rank++;
+    console.log("My new rank is: ", this.rank);
+}
+
+var fred = new Player("Fred", 1000, 5);
+fred.logInfo();
+fred.promote();
+
+var bob = new Player("Bob", 500, 1);            // Now you can create as many standard objects as you wants;
+bob.loginfo();                                                  // Using one, more, or all of its methods as you see fit; or even add your own new ones later on;
+bob.promote();
+*/
 
 
 
