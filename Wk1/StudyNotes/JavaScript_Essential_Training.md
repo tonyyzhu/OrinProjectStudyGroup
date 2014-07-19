@@ -51,6 +51,9 @@ Other on-line tools includes:
 - http://jslint.com/
 - http://caniuse.com/
 - ATOM (mimic of Sublime Text but not ready yet. On the other hand, ST3 has stalled.)
+- http://regexpal.com/
+- http://regex101.com/
+- http://www.regexr.com/
 
 // Javascript Libraries:  First 4 are general purpose Libraries. Most of them are free and can be used/motified freely by just linking them to your program.
 - jQuery: Most popular one that everyone uses (Clear winner of all Libraries), cross-browser support, most general purpose codes, ...
@@ -1131,7 +1134,56 @@ eval (a + b + c);           // result: it would alert "hello" ==> combine string
 // which is the concept of 'progressive enhancement'; and not to mix things up here using inline code.
 
 
+// Regular Expressions: Pattern matching, often be used to validating credit card numbers, email addresses, etc.
+// But, there is no 'perfect' regular expression, even those 'proven' ones available on the net (for email address validation, for example)
+// Just Good Enough to cover your current targeted market and targeted audience.
 
+/*           Two steps:   1. Create Regular Expression;    2. Apply it to something else.
+var myRE = /hello/;                                 // This is shorthanded one;
+var myRE = new RegExp("hello");         // This is normal one;
+
+var myString = "does this sentence has the word hello in it?";
+console.log(myString.search(myRE));
+if (myRE.test(myString)) {
+    alert("Yes");
+}
+
+// .test method <return true or false> tests if myString has the word value of myRE or not; In this case it is 'true', therefore pop up alert of "Yes".
+// .search method would return the position of the first match, such as 32 in this case;
+*/
+
+/*               Creation Patterns
+var myRE = /^hello/;        // ^: at the start of the string;
+/hello$/;           // $: at the end of string;
+/hel+0/;            // +: once or more: l, ll, llllll, whatever; like "helo", "hello", "hellllo", ...
+                        // *: zero or more: above plus "heo"
+                        //?: zero or one, so just "heo" & "helo"
+/hello|world/;      // '|' means either or. So either "hello" or "world" would be ok
+/he..o/;                // '.' means any charactors here;
+/\wello/;               // '\w' means alphanumberic or '_';
+/\bhello/;            // '\b' means word boundary -- it has to appear after a space or after a new line, so 'hello' has to be a word by itself, not part of another word.
+/[crnld]ope/;         // first letter can be any one of [crnld], but nothing outside of [crnld];
+/^[0-9]{5}(?:-[0-9]{4})?$/          // This is to verify US zip code, which is 12345-6789 format.
+ '^[0-9]{5}': starts with 5 numbers of 0~9;
+ ()?$: The whole block inside () could appear zero or once, must be at end position;
+ '[0-9]{4}': finishs with '-' sign plus 4 numbers of 0~9;
+ '?:-': match '-' but does not remember the match.
+
+/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+// This is to verify email address, that must has: '@', '.', and 2 to 4 letter at the end<such as .uk or .net, but not .museum>
+// Also this does not work with other languages outside of English, or strange ones includ "+" sign inside email address.
+// Just Good Enough to cover most US-based email addresses.
++: connection before to after;
+\.[a-zA-Z]{2,4}$: finishes with '.' with 2 to 4 letter of lower case or upper case letter.
+^[a-zA-Z0-9._-]: start with upper or lower case letter, possibly plus sign of '.', '_', '-';
+@[a-zA-Z0-9.-]: @ plus [a-zA-Z0-9.-]
+
+// check out 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions' for more details;
+// Also: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp';
+ */
+
+
+// AJAX: Asynchronous JavaScript and XML. But really, just JS. It doesn't even require XML.
 
 
 
