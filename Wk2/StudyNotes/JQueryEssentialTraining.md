@@ -108,5 +108,41 @@ Hierarchy and combination jQuery Selector Syntax
 - It is used to select elements based on hierarchical relationships or on a series of common criteria
 - "selector, selector, ... ": Finds all of the specified selectors
 - ".class1.class2": Finds all elements with both .class1 and .class2 applied // Series of criterias
-- "parent > child": Finds all child elements that are direct children of elements of type parent
+- "parent > child": Finds all child elements that are direct children of elements of type parent    // This one is not tested in example;
+- "ancestor descendant": Finda all descendant elements that are contained within the elements of type ancestor
+- "prev + next": Finda all next elements that are next to a prev element
+- "prev ~ siblings": Finds all sibling elements that come after prev and match the siblings selector
+
+Basic jQuery Filters, in dix categories
+--------------------------------
+- Basic: Provides basic filtering, like getting the first, last; even or odd numbered items; in a returned set <from selector's results>
+    + :first ==> select only the first instance of the selector's returned set
+    + :last ==> select only the last instance of the selector's returned set
+    + :even ==> select only even-numbered elements in the selector's returned set     // remember that index is zero-based, so 'even' means #1, 3, 5, ..
+    + :odd ==> select only odd-numbered elements in the selector's returned set        // For the same token, 'odd' actually means #2, 4, 6, ...
+    + :eq(n) ==> Filters out elements that are not positioned at the given index           // again, index is zero-based in JavaScript
+    + :gt(n) ==> includes elements that are past the given index
+    + :lt(n) ==> includes elements that are before the given index
+    + :header ==>   selects all header elements (H1, H2, H3, etc)
+    + :animated ==> selects all elements that are currently being animated in some way
+    + :not(selector) ==> include elements that do not match the given selector
+    
+- Content: Filters a set of elements based on the content, like whether an element contains a particular string
+
+- Visibility: Filters a set of elements using the visibility setting of each element as a test
+
+- Attribute: Examines a given attribute on an element to determine whether it should be filtered out
+    + [attribute] ==> includes elements in the result set if they have the specified attribute
+    + [attribute=value] ==> includes elements in the result set if they have the specified attribute and it has the given value
+    + [attribute!=value] ==> includes elements in the result set if they have the specified attribute and it does not have the given value
+    + [attribute^=value] ==> includes elements that have the specified attribute and it starts with the specified value    // Typically used with string;
+    + [attribute$=value] ==> includes elements that have the specified attribute and it ends with the specified value
+    + [attribute*=value] ==> includes elements that have the specified attribute and it contains with the specified value
+    + [attrFilter1][attrFilterN] ==> includes elements that match all of the specified attribute filters
+
+- Child: Selects elements based upon their relatioship with their parent element
+
+- Form: Provides specialized filters that operate on form elements
+
+
 
