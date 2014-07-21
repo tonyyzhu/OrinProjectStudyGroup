@@ -1,0 +1,22 @@
+body {
+    background: url(./img/location3.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.collapse {
+    border-collapse: collapse;
+}
+
+table {
+    display: inline-table;
+    margin: 3em;
+    border: solid 6px;
+    border-width: 6px;
+    border-spacing: 5px, 10px;
+}
+table th, table td {
+    border: 3px solid;
+}
