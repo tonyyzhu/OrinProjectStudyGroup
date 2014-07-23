@@ -20,3 +20,5 @@ table {
 table th, table td {
     border: 3px solid;
 }
+
+div#image img {border: 1px solid black; }
