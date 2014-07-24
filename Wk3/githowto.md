@@ -149,7 +149,8 @@ Git How To
         * git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
         * git config --global alias.type 'cat-file -t'
         * git config --global alias.dump 'cat-file -p'
-    + Option 1 for Unix User: add following to .gitconfig file in $HOME directory:      // I don't want to do it;
+    + Option 1 for Unix User: add following to .gitconfig file in $HOME directory:      
+        // I don't want to do it this way;
         * [alias]
         *     co = checkout
         *     ci = commit
@@ -159,6 +160,7 @@ Git How To
         *     type = cat-file -t
         *     dump = cat-file -p
     + (Option 2) Command aliases - if your shell supports aliases or shortcuts      // Yes. I did.
+        // This is for current terminal session only! After shut down the session and open another terminal, it's all gone!!
         * alias hist='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
         * alias gs='git status '
         * alias ga='git add '
@@ -313,7 +315,7 @@ Git How To
     tony@tony-RV511:~/Documents/git_tutorial/hello$
      */
 
-- Discarding local changes (before staging)
+- Discarding local changes (before staging, or 'git add')
 
     /*        =====Example below=======
     tony@tony-RV511:~/Documents/git_tutorial/hello$ ls
@@ -363,5 +365,114 @@ Git How To
     </html>
      */
 
+- Cancel staged changes (after 'git add' but before committing) 
 
+    /*  ==== example below ===
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ cat hello.html    // original file below;
+    <html>
+        <head>
+        </head>
+        <body>
+        <h1>Hello, World</h1>
+        </body>
+    </html>
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ nano hello.html
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ cat hello.html    // After adding one unwanted line;
+    <html>
+        <head>
+        <!-- This is an unwanted but staged comment -->
+        </head>
+        <body>
+        <h1>Hello, World</h1>
+        </body>
+    </html>
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ git add hello.html    // ga to local repository;
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ gs                           // status shows not committed;
+    On branch master
+    Changes to be committed:
+      (use "git reset HEAD <file>..." to unstage)
 
+        modified:   hello.html
+
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ git reset HEAD hello.html    // reverse as hinted;
+    Unstaged changes after reset:                                   // reverse the git local repository, not the file;
+    M   hello.html
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ cat hello.html        // the file still unchanged;
+    <html>
+        <head>
+        <!-- This is an unwanted but staged comment -->
+        </head>
+        <body>
+        <h1>Hello, World</h1>
+        </body>
+    </html>
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ go hello.html      // Checkout last commit;
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ gs
+    On branch master
+    nothing to commit, working directory clean
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ cat hello.html     // Yep, it is the version before adding that unwanted line;
+    <html>
+        <head>
+        </head>
+        <body>
+        <h1>Hello, World</h1>
+        </body>
+    </html>
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ hist master --all           // Just double check - no new commit;
+    * 3f43695 2014-07-24 | Added HTML header (HEAD, tag: v1, master) [tonyyzhu]
+    * 4631e02 2014-07-24 | Added standard HTML page tags (tag: v1-beta) [tonyyzhu]
+    * 39563a8 2014-07-24 | Commit change for hello.html [tonyyzhu]
+    * 8051278 2014-07-24 | First Commit [tonyyzhu]
+     */
+
+- Cancel Commits
+
+    /*    ======== example here --------------
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ cat hello.html    // Just checking before start;
+    <html>
+        <head>
+        </head>
+        <body>
+        <h1>Hello, World</h1>
+        </body>
+    </html>
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ nano hello.html
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ cat hello.html       // file changed by adding a line;
+    <html>
+        <head>
+        </head>
+        <body>
+        <h1>Hello, World</h1>
+        <!-- This is the unwanted but committed change -->
+        </body>
+    </html>
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ ga hello.html              // git add;
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ gc -m "Oops, we didn't want this commit"    //git commit;
+    [master 6e9e7bf] Oops, we didn't want this commit
+     1 file changed, 1 insertion(+)
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ git revert HEAD
+    // better to use "git revert HEAD --no-edit", otherwise it brings up nano for me to edit the git record file;
+    [master 54625d3] Revert "Oops, we didn't want this commit"      // hinted that changes reverted;
+     1 file changed, 1 deletion(-)
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ hist             // double check to be sure;
+    * 54625d3 2014-07-24 | Revert "Oops, we didn't want this commit" (HEAD, master) [tonyyzhu]
+    * 6e9e7bf 2014-07-24 | Oops, we didn't want this commit [tonyyzhu]
+    * 3f43695 2014-07-24 | Added HTML header (tag: v1) [tonyyzhu]
+    * 4631e02 2014-07-24 | Added standard HTML page tags (tag: v1-beta) [tonyyzhu]
+    * 39563a8 2014-07-24 | Commit change for hello.html [tonyyzhu]
+    * 8051278 2014-07-24 | First Commit [tonyyzhu]
+    tony@tony-RV511:~/Documents/git_tutorial/hello$ cat hello.html    // double check: this time even file has been changed back!
+    <html>                                                                                            // No checkout necessary;
+        <head>
+        </head>
+        <body>
+        <h1>Hello, World</h1>
+        </body>
+    </html>
+     */
+
+- Removing a commit from a branch
+
+/*
+
+ */
