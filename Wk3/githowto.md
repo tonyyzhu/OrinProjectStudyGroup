@@ -476,3 +476,24 @@ Git How To
 /*
 
  */
+
+- "non Fast-Forward" rejection from GitHub issue
+
+/*
+tony@tony-RV511:~/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk3/CSSStudy$ git push origin master
+Username for 'https://github.com': tonyyzhu
+Password for 'https://tonyyzhu@github.com': 
+To https://github.com/tonyyzhu/CSSStudy.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/tonyyzhu/CSSStudy.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+I realize what's happened: there are two separated GitHub depositorys for CSSStudy: one under Wk3 which is consistant with Ubuntu laptop, another one is a new independant one with same name (which must be somehow created from that Windows Laptop). When I move from Windows Laptop to Ubuntu Laptop for notes taking, I checked out the latest info from GitHub (instead of LAN file transfer). But it now hook up to the newly created GitHub depository, that now my updated one on my local Ubuntu laptop is not the upstream/master). Therefore it consider that this is not the 'fast-forward' one and reject the push. However, what I did based on Google search or StackOverflow were all assumed for one public depository, therefore all those solutions won't work. 
+
+What I did is to rename the local folder with 'old', clone the new GitHub one again, and then copy the files back form 'old' to the newly created ones. Now ga and ga and then push works. 
+
+Oh, actually this new one is actually the original one. The other one must be created by the push from its parent folder... 
+ */*
