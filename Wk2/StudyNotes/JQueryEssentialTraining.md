@@ -1,5 +1,7 @@
-JQuery Essential Training           20/07/2014
+JQuery Essential Training           
 =====================
+
+20/07/2014 
 
 Purpose
 -----------
@@ -145,4 +147,5 @@ Basic jQuery Filters, in dix categories
 - Form: Provides specialized filters that operate on form elements
 
 
+4/8/2014:  After spend 7 days to finish CSS2.1 course, and wasted last week on two car issues, I am back to continue this one, and doing so at same time with 'Intro to Linux' course.
 
