@@ -1,4 +1,5 @@
 // 12/8/2014: Build the game after finish JavaScript Function section from Codecademy.
+// Version 2: extended the function to handle inappropriate choice from user, whom provide choice like 'dog'.
 var userChoice = prompt("Do you choose rock, paper or scissors?");
 var computerChoice = Math.random();
 if (computerChoice < 0.34) {
@@ -29,13 +30,16 @@ var compare = function(choice1, choice2) {
             return "scissors wins";
         };
     }
-    else {
+    else if (choice1 === "scissors") {
         if (choice2 === "rock") {
             return "rock wins";
         }
         else {
             return "scissors wins";
         };
+    }
+    else {
+        alert ("Your answer is not valid. Please restart the game,  and choose one only from the following three items: rock, paper or scissors. ");
     };
 };
 
