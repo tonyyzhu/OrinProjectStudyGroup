@@ -169,16 +169,20 @@ Arrays can have dimensions (level of nested arrays/lists), and Jagged Arrays
 
 Object
 -----------
-- Object contains 'property:value' pair.
-- Object can be created in either of two methods below:
+- Object contains 'property:value' pair. Property like variables, just a placeholder to store the value there for further usage later on.
+- Object can be created in either of three methods below:
     + object liternal notation method:
         /* var myObj = {type: 'fancy', dispositon: 'sunny'}; var emptyObj = {}; */
     + object constructor method:
         /* vary myObj = new Object(); */
+    + Also customizing constructor method later on.
     + Use one of two ways to add keys, after the object created:
         /* myObj["name"] = 'Charlie'; or: myObj.name = 'Charlie'; */
+    + The value of a property can be assigned to a global variable or local variable:
+        /* var name1 = myObj.name;   // assign 'Charlie' to variable name1; */
+        /* var name2 = myObj["name"];    // Last statement use "dot notation" method; this one using "bracket notation" method.   */*
 
-        /*       Becareful on second statement: it is not a list, but a way to define and add property of an object and its value into that object !!!
+        /*       Be careful on second statement: it is not a list, but a way to define and add property of an object and its value into that object !!!
         var me = new Object();
         me["name"] = "Tony";
         me.age = 48;
@@ -256,3 +260,125 @@ Object
     search("Steve");
      */
 
+- keyword 'this' can be used inside a method, that 'this' is just a placeholder (that will refer to whichever object called that method, when the method is actually used). So that we can re-use the same method for differenet objects! 
+- Also, you can assign a method to an object without invoke it (before give it '()' and parameters). Example below:
+  /*
+    // here we define our method using "this", before we even introduce bob
+    var setAge = function (newAge) {
+      this.age = newAge;                // when define methods inside an object, use ';' after each statements;
+    };                                              // instead of using ',' to separate each 'property:value' pairs when using literal method to construct an object.
+    // now we make bob
+    var bob = new Object();
+    bob.age = 30;
+    bob.setAge = setAge;
+      
+    // make susan here, and first give her an age of 25
+    var susan = new Object();
+    susan.age = 25;
+    susan.setAge = setAge;
+    // here, update Susan's age to 35 using the method
+    susan.setAge(35);
+    console.log(susan.age);
+       */
+      
+      /*
+      function Person(name,age) {
+          this.name = name;
+          this.age = age;
+        }
+
+        // Let's make bob and susan again, using our constructor
+        var bob = new Person("Bob Smith", 30);
+        var susan = new Person("Susan Jordan", 25);
+        // help us make george, whose name is "George Washington" and age is 275
+        var george = new Person("George Washington", 275);
+        console.log(george);
+       */
+      
+- Object is just another 'type', like: string, number, boolean, array. So, we can make an array of objects.
+  /*
+    // Our Person constructor
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+    // Now we can make an array of people
+        var family = [];
+        var alice = new Person("alice", 40);
+        family.push(alice);
+        var bob = new Person("bob", 42);
+        family.push(bob);
+        var michelle = new Person("michelle", 8);
+        family.push(michelle);
+        var timmy = new Person("timmy", 6);
+        family.push(timmy);
+    // loop through our new array
+        for (var i=0; i < family.length; i++) {
+            console.log(family[i].name);
+        }
+   */
+  
+   /*
+   // Our person constructor
+    function Person (name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // We can make a function which takes persons as arguments
+    // This one computes the difference in ages between two people
+    var ageDifference = function(person1, person2) {
+        return person1.age - person2.age;
+    };
+
+    // Make a new function, olderAge, to return the age of
+    // the older of two people
+    var olderAge = function(person1, person2) {
+        if (person1.age > person2.age){
+            return person1.age;
+        } else {
+            return person2.age;
+        }
+    };
+
+    // Let's bring back alice and billy to test our new function
+    var alice = new Person("Alice", 30);
+    var billy = new Person("Billy", 25);
+
+    console.log("The older person is " + olderAge(alice, billy));
+
+    */
+
+- review 2 methods of making an object:  
+   /*
+   // object1 using Liternal Notation method;
+   var spencer = {
+      age: 22,
+      country: "United States"
+    };
+
+    // make spencer2 here with constructor notation and the Object constructor;
+    var spencer2 = new Object();
+    spencer2.age = 22;
+    spencer2.country = "United States";
+    console.log(spencer2);
+
+    // obviously the third method is to use a custom constructor;
+    function Person(age, country) {
+        this.age = age;
+        this.country = country;
+    }
+
+    var spencer3 = new Person(22, "United States");
+    */
+
+- review: Properties can store values like variables, but can not permanently store them like a database, which the data is stored separately ouside of a program.
+  /*
+  Properties are like variables that belong to an object, and are used to hold pieces of information. Properties can be accessed in two ways:
+    1.  Dot notation, with ObjectName.PropertyName
+    2. Bracket notation, with ObjectName["PropertyName"]    // (don't forget the quotes!)
+   */
+- review: Methods are like functions that are associated with a particular object. They are especially helpful when you want to either:
+- 1. Update the object properties;
+- 2. Calculate something based on an object's properties.
