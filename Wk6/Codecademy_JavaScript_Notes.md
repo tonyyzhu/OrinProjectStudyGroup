@@ -379,6 +379,55 @@ Object
     1.  Dot notation, with ObjectName.PropertyName
     2. Bracket notation, with ObjectName["PropertyName"]    // (don't forget the quotes!)
    */
+  
+   /*               Who's in Your Bracket?
+    And finally, let's go over retrieving property values. Throughout this section, we've been using dot notation to get the value of an object's property:
+    "someObj.propName"; However, remember that we can also use bracket notation:    'someObj["propName"]';
+    
+    An advantage of bracket notation is that we are not restricted to just using strings in the brackets. We can also use variables whose values are property names:
+        var someObj = {propName: someValue};
+        var myProperty = "propName";
+        someObj[myProperty];
+    The last line is exactly the same as using someObj["propName"];.
+    */
+
 - review: Methods are like functions that are associated with a particular object. They are especially helpful when you want to either:
 - 1. Update the object properties;
 - 2. Calculate something based on an object's properties.
+- 3. Methods just like functions, that can also have parameters to pass the value into the code that's running inside the method.
+      /*       In the following example, inside the 'sayJob' method, it has to be 'this.job' instead of 'job'. Otherwise error message;
+      var james = {
+            job: "programmer",
+            married: false,
+            sayJob: function() {
+                console.log("Hi, I work as a " + this.job);
+                
+            }
+        };
+
+        // james' first job
+        james.sayJob();
+
+        // change james' job to "super programmer" here
+        james.job = "super programmer";
+
+        // james' second job
+        james.sayJob();
+       */
+
+- Below is an interesting example, that works on Firefox but not on Codecademy for a while, until I refresh Chrome. Reset Code and typing in does not change it...
+    /*
+    var james = {
+        job: "programmer",
+        married: false
+    };
+
+    // set to the first property name of "james"
+    var aProperty = "job";
+
+    // print the value of the first property of "james" 
+    // using the variable "aProperty"
+    console.log(james[aProperty]);
+     */
+    
+     
