@@ -169,6 +169,7 @@ Arrays can have dimensions (level of nested arrays/lists), and Jagged Arrays
 
 Object
 -----------
+- Object contains 'property:value' pair.
 - Object can be created in either of two methods below:
     + object liternal notation method:
         /* var myObj = {type: 'fancy', dispositon: 'sunny'}; var emptyObj = {}; */
