@@ -642,6 +642,33 @@ Object
     console.log(hasOwn);                                                        // Result: true;
      */
     
+A Straight-to-the-point: Primer on Javascript from discovermeteor.com
+=================================================
+- Learning 20% of a language should be enough to cover 80% of situations
+- In JavaScript, Functions are Variables, too!
+- The Absolute Minimum Amount of JavaScript Language:
+  + Variables
+  + Functions
+  + Return
+  + If Statements
+  + If/Else Statements
+    * Shorthand syntax: foo ? functin1() : function2();  var n = foo ? 1 : 2;  If 'true' then 1, otherwise 2.
+    * if/else if/else
+  + Arrays
+  + Objects
+  + Anonymous Functions: define a function, then define another function to pass first one as one of its parameters(just like variables), therefore call this first function in a chain.
+  + Chaining: something.function1().function2().function3() :: n=5; n.double().square();  // =100
+  + This
+  + Operators
+  + Wired Random Characters: 
+    * $() is commonly used as an alias for the jQuery functions(jQuery library)
+    * _ (such as _.shuffle([1,2,3,4]) ) is the main object of the Underscore library.
+    * So if you even encounter some weird out-of-place character in your JavaScript code, make sure it's not a variable before assuming you just discovered a new, little-used syntax feature.
+  + Style:
+    * camelCase
+    * add ";" at the end of each line, even if it's optional
+    * Separate each keyword with a space, ie. a = b + 1, not a=b+1.
+  
 
 
 
