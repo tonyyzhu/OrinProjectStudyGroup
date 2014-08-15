@@ -547,3 +547,105 @@ Object
     var penguin = new Penguin("Capitan");
     penguin.sayName();                                          // Now it can use the same method in Animal without defineing it!
      */
+    
+    // BTW, I had issues passing two screens, all due to "numLegs" that I misread the 'L' as 'l'. It was so tiny and really hard to find...
+    // It wasted me too much time here and there...
+    // BTW, Firebug can't help here at all, when I use 'numlegs' across the board, while website looking for 'numLegs'...
+
+- Inheritance can go up like a chain, all the way up to mighty "Object" class (root class in JavaScript). If it can't find a property or a method in its current object, it would traverse up the inheritance chain to looking for it, until arrived "Object" class.
+
+- all properties of an object are automatically "Public", which means info that class is willing to share outside of the class.
+
+- To define a private property inside a class (That can only be accessed from within the class), use 'var' instead of 'this'. Example below:
+    /*
+    function Person(first,last,age) {
+       this.firstname = first;
+       this.lastname = last;
+       this.age = age;
+       var bankBalance = 7500;
+    }
+
+    // create your Person 
+    var john = new Person("John", "Trivbodi", 50);
+
+    // try to print his bankBalance
+    console.log(john.bankBalance);              // Result: undefined
+     */
+    
+- What if I really want to know that private property? Just add a public method for that class to access that private one.
+
+    /*
+    function Person(first,last,age) {
+       this.firstname = first;
+       this.lastname = last;
+       this.age = age;
+       var bankBalance = 7500;
+      
+       this.returnBalance = function() {
+          return bankBalance;
+       };
+     */
+
+- For the same token, we can have private method, and we can add a new public method to return that private method (not the result of that private method, but the private method itself)
+    /*
+    function Person(first,last,age) {
+       this.firstname = first;
+       this.lastname = last;
+       this.age = age;
+       var bankBalance = 7500;                      // Private Property;
+      
+       var returnBalance = function() {         // change 'this.' to 'var ', make it from public method to private method;
+          return bankBalance;
+       };
+           
+       // create the new function here
+       this.askTeller = function() {                // Create a Public method to return that invisible private method;  sneaky!
+           return returnBalance;
+       }
+    }
+
+    var john = new Person('John','Smith',30);
+    console.log(john.returnBalance);
+    var myBalanceMethod = john.askTeller();             // assign this method to be the public method of that class for this person only;
+    var myBalance = myBalanceMethod();                  // get result of the method;
+    console.log(myBalance); 
+     */
+
+- You can also add a password to keep the access limited:
+    /*
+    function Person(first,last,age) {
+       this.firstname = first;
+       this.lastname = last;
+       this.age = age;
+       var bankBalance = 7500;
+      
+       this.askTeller = function(pass) {
+         if (pass == 1234) return bankBalance;
+         else return "Wrong password.";
+       };
+    }
+
+    var john = new Person('John','Smith',30);
+    // the variable myBalance should access askTeller() with a password as an argument  
+    var myBalance = john.askTeller(1234);
+    console.log(myBalance);
+     */
+
+- Why baggage?
+    /*
+    // what is this "Object.prototype" anyway...?
+    var prototypeType = typeof Object.prototype;
+    console.log(prototypeType);                                                 // Result: object;
+
+    // now let's examine it!
+    var hasOwn = Object.prototype.hasOwnProperty('hasOwnProperty');
+    console.log(hasOwn);                                                        // Result: true;
+     */
+    
+
+
+
+
+
+
+
