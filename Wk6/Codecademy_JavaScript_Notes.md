@@ -175,7 +175,7 @@ Object
         /* var myObj = {type: 'fancy', dispositon: 'sunny'}; var emptyObj = {}; */
     + object constructor method:
         /* vary myObj = new Object(); */
-    + Also customizing constructor method later on.
+    + Also customizing constructor method later on. Well, it is actually 'Class' in OOP method. 'Class' is just another type, as object, array, ...
     + Use one of two ways to add keys, after the object created:
         /* myObj["name"] = 'Charlie'; or: myObj.name = 'Charlie'; */
     + The value of a property can be assigned to a global variable or local variable:
@@ -430,4 +430,120 @@ Object
     console.log(james[aProperty]);
      */
     
+- "typeof" is an useful one, esp. considering JavaScript is a weak-typed language:
+    /*
+    // complete these definitions so that they will have
+    // the appropriate types
+    var anObj = { job: "I'm an object!" };
+    var aNumber = 42;
+    var aString = "I'm a string!";
+
+    console.log(typeof anObj  ); // should print "object"
+    console.log(typeof aNumber  ); // should print "number"
+    console.log(typeof aString  ); // should print "string"
+     */
+    
+- Baggage: "hasOwnProperty" tells if this object has this property or not: return true or false;
+     /*
+     var myObj = {
+        name: "whatever"
+        
+    };
+
+    console.log( myObj.hasOwnProperty('name') ); // should print true
+    console.log( myObj.hasOwnProperty('nickname') ); // should print false
+      */
      
+     /*
+    var suitcase = {
+        shirt: "Hawaiian"
+    };
+
+    if (suitcase.hasOwnProperty('shorts')) {
+        console.log(suitcase.shorts);
+    } else {
+        suitcase.shorts = "biniki";
+        console.log(suitcase.shorts);
+    }
+      */
+
+- Print out object names and values:
+    /*
+    var nyc = {
+        fullName: "New York City",
+        mayor: "Bill de Blasio",
+        population: 8000000,
+        boroughs: 5
+    };
+
+    // write a for-in loop to print the value of nyc's properties
+    for (var ph in nyc) {
+        console.log(nyc[ph]);       // Print out values;
+        console.log(ph);                // Print out names;
+    }
+     */
+    
+- OOP! How exciting here, used in JavaScript!
+    /*
+    function Dog (breed) {
+      this.breed = breed;
+    }
+
+    // here we make buddy and teach him how to bark
+    var buddy = new Dog("Golden Retriever");
+    buddy.bark = function() {
+      console.log("Woof");
+    };
+    buddy.bark();
+
+    // here we make snoopy
+    var snoopy = new Dog("Beagle");
+    // we need you to teach snoopy how to bark here
+    snoopy.bark = function() {
+        console.log("Woof Woof!!!");
+    };
+    // this causes an error, because snoopy doesn't know how to bark! -- Before adding snoopy.bark method;
+    snoopy.bark();
+     */
+    
+     /*     Improvement! use 'prototype' to teach all dogs that belongs to 'Dog' Class to bark:
+     function Dog (breed) {
+      this.breed = breed;
+    };
+
+    // here we make buddy and teach him how to bark
+    var buddy = new Dog("golden Retriever");
+    Dog.prototype.bark = function() {                       // Watch out here: methods not for individual dog, but for the whole CLASS;
+      console.log("Woof");
+    };
+    buddy.bark();
+
+    // here we make snoopy
+    var snoopy = new Dog("Beagle");
+    /// this time it works!
+    snoopy.bark();
+      */
+
+- Inheritance! See example below, just add 'prototype' to make it happen:
+    /*
+    // the original Animal class and sayName method
+    function Animal(name, numLegs) {
+        this.name = name;
+        this.numLegs = numLegs;
+    }
+    Animal.prototype.sayName = function() {
+        console.log("Hi my name is " + this.name);
+    };
+
+    // define a Penguin class
+    function Penguin(name) {
+        this.name = name;
+        this.numLegs = 2;
+    }
+
+    // set its prototype to be a new instance of Animal     // HERE IS THE MAGIC:
+    Penguin.prototype = new Animal();
+
+    var penguin = new Penguin("Capitan");
+    penguin.sayName();                                          // Now it can use the same method in Animal without defineing it!
+     */
