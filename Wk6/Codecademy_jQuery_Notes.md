@@ -76,6 +76,8 @@ Codecademy JQuery Course
 
 - While there is .fadeOut(), there is also a .fadeIn() function that usually works on top of CSS 'display:none;' pair.
 
+- Creating HTML Elements: Google Gchat - each message is actually a new <div> being dynamically added to the page. So, in theory, I should be able to write a IM program now, if I could add the backend messaging part  (using something such as Nodes.js) !!!
+
 
 
 
