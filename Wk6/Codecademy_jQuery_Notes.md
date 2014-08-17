@@ -78,7 +78,22 @@ Codecademy JQuery Course
 
 - Creating HTML Elements: Google Gchat - each message is actually a new <div> being dynamically added to the page. So, in theory, I should be able to write a IM program now, if I could add the backend messaging part  (using something such as Nodes.js) !!!
 
+- jQuery events:
+    + 'Things to Touch' is the HTML element you'll click on, hover over, interact with;
+    + 'Things to Affect' is the HTML element that fades away, changes size, or undergoes some other transformation.
+    
+    /*
+    $(document).ready(function() {
+        $('thingToTouch').event(function() {
+            $('thingToAffect').effect();
+        });
+    });
+    
+      $(document).ready(function() {
+            $('thingToAffect').effect();
+        });  
 
+     */
 
 
 
