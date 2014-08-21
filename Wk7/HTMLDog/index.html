@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+        <title>Best Practice</title>
+        <link rel="stylesheet"  type="text/css" href="style.css">
+</head>
+<body>
+
+        <h1>Hi There! We are awesome and we do awesome stuff. Awesome, awesome</h1>
+        <a href="http://www.google.com">Work with us!</a>
+        <br><br>
+        <P>This is my first web page</P>
+        <p>How exciting!</p>
+        <hr />
+        <p id="pre"><i>Yes</i>, <small>that</small> <b>really</b> <em>is</em> exciting. <strong>Warning:</strong> level of <tt><sup>excitement</sup></tt> may <sub>cause</sub> head to <big>explode</big>. </p>
+        <p>And, above two lines of HTML <sup>presentational</sup> Tags <b>should be avoided</b>, and <i> use CSS instead.</i></p>
+        <dl>
+            <dt>There are three kind of lists: ordered list, unordered list, and <strong>definition terms</strong></dt>
+                <dd>'dl' is rarely mentioned, because it is much more specific than 'ol' and 'ul'.</dd>
+                <dd>It has three elements: 'dl', 'dt' and 'dd'</dd>
+            <dt>It doesn't have to be one 'dt' followed by one 'dd', </dt>
+            <dt>but you could mix them as much as you like, in both ways.</dt>
+        </dl>
+        <img src="http://www.htmldog.com/badge1.gif" width="120" height="90" alt="HTML Dog">
+        <p>The most commonly used file formats for images are <strong>JPEGs</strong>, <strong>GIFs</strong> and <strong>PNGS</strong></p>
+        <ul>
+            <li>JPEGs are typically used for images such as photographs, using mathematical algorithm to compress the image and will distort the original stightly. The lower the compression, the clear the image and the higher the file size.</li>
+            <li>GIFs are typically used for images with solid colors, such as icons and logos. It can have no more than 256 colors, but they maintain the colors of the original image. The lower the number of colors you have in the image, the lower the file size will be. It also allow any pixel in the image to be transparent.</li>
+            <li>PNGs are typically used for versatile images in more complex dsigns But they are not fully supported by some older browsers. It replicates colors (like GIF), but allow 16 million colors as well as alpha transparency(that is, an area could be 50% transparent).</li>
+        </ul>
+        <p>The web is forever getting faster and faster, and users are less and less patient. Using super-high resolution images isn't doing any favors to your & your user's bandwidth (or patience). Image compression is a great tool and you need to strike a balance between image quality and image size. </p>
+        <table>
+            <tr>
+                <th>Table</th>
+                <th>Header</th>
+                <th>Only</th>
+            </tr>
+            <tr>
+                <td>Optional</td>
+                <td>Table</td>
+                <td>Tags</td>
+            </tr>
+            <tr>
+                <td>Optional</td>
+                <td>Cell</td>
+                <td>Tags</td>
+            </tr>
+            <tr>
+                <td>Optional</td>
+                <td>Tag</td>
+                <td>Properties</td>
+            </tr>
+        </table>
+        <p><strong>Form</strong> part is something that I didn't touch in basic HTML section. It has <code>form</code>, <code>input</code>, <code>textarea</code>, <code>select</code>, and <code>option</code> tags. Each of them has a lot of <strong>attributes</strong> that related to XML protocol and other languages (such as JavaScript or PHP). I should look at this <a href="http://www.htmldog.com/guides/html/beginner/forms/">link</a> in detail to patch this hole of my knowledge. </p>
+        <p>Just 'input' tag will have many type attributes: </p>
+        <ul>
+            <li>type="text": a standard textbox; default if 'type' attribute is omitted. </li>
+            <li>type="password": similar to above, but input will be hidden. </li>
+            <li>type="checkbox": could also has 'checked' attribute to follow as default value. </li>
+            <li>type="radio": similar to above, but only one button can be selected in a group. </li>
+            <li>type="submit": control the text with 'value' attribute. </li>
+            <li>Just like 'img' &. 'br' tags, the 'input' tag does not surround any content, so doesn't require a closing tag. </li>
+        </ul>
+        <p>Below is the copied example of a form. BTW, it won't work without the file of "contactus.php".</p>
+        <form action="contactus.php" method="post">
+
+            <p>Name:</p>
+            <p><input type="text" name="name" value="Your name"></p>
+
+            <p>Comments: </p>
+            <p><textarea name="comments" rows="5" cols="20">Your comments</textarea></p>
+
+            <p>Are you:</p>
+            <p><input type="radio" name="areyou" value="male"> Male</p>
+            <p><input type="radio" name="areyou" value="female"> Female</p>
+            <p><input type="radio" name="areyou" value="hermaphrodite"> An hermaphrodite</p>
+            <p><input type="radio" name="areyou" value="asexual"> Asexual</p>
+
+            <p><input type="submit"></p>
+
+        </form>
+        <br><br>
+        <a href="#pre" accesskey="k">A link can also send a user to another part of the same page, just use ID and select it will scroll the page straight to the element with that ID.</a>
+
+
+</body>
+</html>
