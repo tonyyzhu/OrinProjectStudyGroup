@@ -2,7 +2,7 @@
 <html>
 <head>
         <title>Best Practice</title>
-        <link rel="stylesheet"  type="text/css" href="style.css">
+        <link rel="stylesheet"  href="style.css">
 </head>
 <body>
 
@@ -79,8 +79,38 @@
             <p><input type="submit"></p>
 
         </form>
+        <p>There are plenty of HTML/CSS/JavaScript languages to learn. I am at all basic levels, and I need to do those courses on HTML Dog site, for both medium and advanced levels.</p>
         <br><br>
         <a href="#pre" accesskey="k">A link can also send a user to another part of the same page, just use ID and select it will scroll the page straight to the element with that ID.</a>
+        <br><br><br>
+
+        <hr><hr>
+        <h1>CSS Basicas</h1>
+        <h3>3 ways to applying CSS</h3>
+        <ol>
+            <li>In-line style such as "&lt;p style='color: red'&gt;text &lt;/p&gt;", should be avoided; to make HTML a stand-alone, presentation free document.</li>
+            <li>Internal (or Embedded) style, are used for the whole page. Inside the 'head' element, the 'style' tags surround all of the styles for the page. </li>
+            <li>External style (or a separate CSS file) are used for the whole, multiple-page website. It should have one line inside 'head' section, as '&lt;link rel="stylesheet" href="style.css"&gt;'. </li>
+            <li>BTW, 'type="text/css"' won't be required in 'link' tag anymore, but still required in 'style' tag. </li>
+        </ol>
+        <p>HTML has tags, CSS has selectors; plus ID and Class. HTML call them 'attributes', CSS call them 'properties'. </p>
+        <p>There are many property-specific units here: px, em, pt(typically in printed media), percentages, pc(picas), cm, mm, in. When value is zero(0), you don't need to state a unit.  </p>
+        <p>"px" doesn't actually necessarily mean pixels all the time, when modern browsers allow users to zoom in and out of a page. It would be genuine specified size on a non-zoomed browser, but they will still increase and decrease in size with the user's preference. [It is a good thing!] </p>
+
+        <h3>CSS has 16 Million colors, in the form of a name, a RGB value or a hex code</h3>
+        <p>Hexadecimal (or more accurately know as "sexadecimal") is 16-based value (from 0  to f, with prefix of #, in the order of Red, Green, Blue). CSS3, the latest version, also allows you to define HSL colors - Hue, Saturation and Lightness, along with semi-transparent colors. </p>
+        <p>There are a select few 'safe' fonts, the most commonly used are Arial, Verdana, and Time New Roman. Or, across browsers, "font-family: arial, helvetica, serif, verdana, 'Times New Roman';"  "font-weight: " can have value of normal (400), bold(700), or from 100 ~ 900. "font-style" could be italic or normal. "text-decoration" can be 'underline', 'overline', 'line-through', or 'none'. "text-transform" has 'capitalize', 'uppercase', 'lowercase', 'none'.   </p>
+        <p>In old printing dates, someone said that half of the art is in the font, another half is in text spacing.</p>
+        <ul>
+            <li>'letter-spacing' : default is 'normal', length </li>
+            <li>'word-spacing' : as above </li>
+            <li>'line-height' : as above, plus a number (a multiple of the font size), a percentage. </li>
+            <li>'text-align' : left, right, center, or justify </li>
+            <li>'text-indent' : indent the first line of a paragraph (to a given length or percentage). Traditionally used in print, but rarely in digital media such as web. </li>
+        </ul>
+
+        <h3>The Box Model: Margins, Paddings and borders</h3>
+
 
 
 </body>

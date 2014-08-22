@@ -3,7 +3,7 @@ body {
             text-align: center;
 }
 
-h1 {
+h1, h3 {
 
         color: white;
 }
@@ -22,7 +22,7 @@ a:hover {
     background: red;
 }
 
-p, ul, table {
+p, ul, table, ol {
     background-color: white;
     text-align: left;
 }
@@ -33,4 +33,10 @@ th, td {
 
 dl {
     background-color: lightgrey;
+}
+
+code {
+    font-size: larger;
+    font-weight: bold;
+    color: blue;
 }
