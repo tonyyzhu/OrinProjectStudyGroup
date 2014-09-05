@@ -1,0 +1,403 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bold",
+				"bolder"
+			],
+			[
+				"b",
+				"blueviolet"
+			],
+			[
+				"prim",
+				"primaryList"
+			],
+			[
+				"is",
+				"isPrimary"
+			],
+			[
+				"h",
+				"head	Tag"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"func",
+				"function  (keyword)"
+			],
+			[
+				"bo",
+				"border-spacing"
+			],
+			[
+				"bor",
+				"border-spacing"
+			],
+			[
+				"t",
+				"tab_content"
+			],
+			[
+				"si",
+				"font-size"
+			],
+			[
+				"c",
+				"color"
+			],
+			[
+				"no",
+				"no-repeat  (value)"
+			],
+			[
+				"li",
+				"li	Tag"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"alt",
+				"alt=  (attribute)"
+			],
+			[
+				"in",
+				"index"
+			],
+			[
+				"tex",
+				"text-decoration"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 304.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"package control",
+				"Package Control: Remove Package"
+			],
+			[
+				"p",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 529.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/opt/sublime_text/changelog.txt",
+		"/home/tony/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/tony/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/tony/Public/Reference.txt",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk7/HTMLDog/index.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk7/HTMLDog/style.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk3/CSSStudy/CSS_StudyNotes.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk3/githowto.md",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk2/StudyNotes/JQueryEssentialTraining.md",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk6/Codecademy_CSS.md",
+		"/home/tony/Azureus Downloads/The Web Application Hacker's Handbook - Finding and Exploiting Security Flaws{H33T}{Easypath}/Torrent downloaded from AhaShare.com.txt",
+		"/home/tony/Azureus Downloads/The Web Application Hacker's Handbook - Finding and Exploiting Security Flaws{H33T}{Easypath}/tracked_by_h33t_com.txt",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk6/Codecademy_jQuery_Notes.md",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/script13.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/draggableCar.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/script15.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/MenuSelectable.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/stylesheet15.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/script14.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/jQueryUICollapsible.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/stylesheet14.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/AnimateSprite.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/script12.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/stylesheet12.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/MoveBlockByKeydown.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/script11.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/stylesheet11.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/focus.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/script10.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/stylesheet10.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/HighlightMenuOptionUsingHover.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/stylesheet9.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/script9.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/Krypton.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/script8.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/stylesheet8.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/ToDoList.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/script7.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/sytlesheet7.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/ModifyCSS.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/script6.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/stylesheet6.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/script5.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/stylesheet5.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/ModifyElements.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/InsertingElements.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/script4.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/script3.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/SlidingMenu.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/stylesheet3.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/script2.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/MakeYourOwnButton.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/stylesheet2.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/FadingBlocks.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/index.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/script.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk2/jquery-1.11.1.min.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/jQuery/stylesheet.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk6/Codecademy_JavaScript_Notes.md",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/Javascript101/Codecademy/CashRegister.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/Javascript101/Codecademy/AddressBook.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/Javascript101/Codecademy/FizzBuzz.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/ProjectEuler/Problem3.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/ProjectEuler/Problem2.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/ProjectEuler/Problem1.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/Javascript101/Codecademy/ContactList.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/Javascript101/Codecademy/AreYouInMyFamily.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/Javascript101/Codecademy/TrollEncountedInForest.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/Javascript101/Codecademy/DragonSlayer.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/Javascript101/Codecademy/SearchYourNameV2.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/Javascript101/Codecademy/RockPaperScissor.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Epicodus/my-first-webpage.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Restart/Javascript101/Codecademy/script.js",
+		"/home/tony/.config/sublime-text-3/Packages/User/Plain text.sublime-settings",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk1/Calculator/2.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk2/Restaurant.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk2/yummy.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk2/yummy.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk3/CSSStudy/CSSStudyNotes.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk2/2a.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk2/Samples/index.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk2/JQueryETExamples/02_retrieving/BasicSelectors_finished.htm",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk2/StudyNotes/JQueryEssentialTraining",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk1/StudyNotes/JavaScript_Essential_Training.md",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk1/Calculator/2.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/README.md",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk1/Calculator/2.js",
+		"/home/tony/Desktop/FrontEnd/changes.md",
+		"/home/tony/Desktop/QuoteFromNewsReading.md",
+		"/home/tony/Documents/ShareTrading/ASX200.md",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk2/script.js",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk2/style.css",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk2/validatorRU.html",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk2/validatorRu_Explanation.md",
+		"/home/tony/Desktop/FrontEnd/JS/OrinProjectStudyGroup/Wk1/StudyNotes/JavaScript Essential Training",
+		"/home/tony/Desktop/FrontEnd/JS/curriculum/Wk1/Calculator/2.html",
+		"/home/tony/Desktop/FrontEnd/JS/curriculum/Wk1/Warmup/1.js",
+		"/home/tony/Desktop/FrontEnd/JS/curriculum/Wk1/Calculator/2.js",
+		"/home/tony/Desktop/FrontEnd/JS/1.js",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myC9JS13.html",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/HelloWorld.html",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/mytemplate.html",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myscript20.js",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myC9JS21.html",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myC9JS20.html",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myC9JS19.html",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myscript19.js",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myscript19a.js",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myscript18.js",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myC9JS18.html",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/script18.js",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myC9JS17.html",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myscript17.js",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myC9JS16.html",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myscript16.js",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myC9JS15.html",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/mystyle15.css",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myscript15.js",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myC9JS14.html",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myscript14.js",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myscript13.js",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myscript12.js",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myanotherscript.js",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myC9JS11.html",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myC9JS10.html",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myC9JS09.html",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myC9JS08.html",
+		"/home/tony/Desktop/MSCourses/Javascript_Fundamentals/Code/myC9JS07.html"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"outline-style",
+			"outline",
+			"div",
+			"inlineHTML",
+			"Working with External Javascript Files"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"li",
+			"Organizing and Simplifying Javascript with Object Literals"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 38.0
+	},
+	"input":
+	{
+		"height": 43.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "IntermediateTutorial.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 254.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
