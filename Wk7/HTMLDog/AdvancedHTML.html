@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced HTML Tutorials from HTML Dog</title>
+    <link rel="stylesheet" type="text/css" href="#">
+</head>
+<body>
+    <h1>Advanced HTML Tutorials from HTML Dog</h1>
+    <article>
+        <h1>Presentational Text Tags, such as 'time', 'mark', and others </h1>
+        <p>'time' and its machine-readable 'datetime' attribute is the top of the ice cream. But the attribute is not required if the textual content of the 'time' element is already machine readable. </p>
+        <p>Example: Written by Doctor Who on <time datetime="2052-11-21">Thursday 21st November 2052</time>. </p>
+        <h1>Text can be highlighted using 'mark', as if with a marker pen. Looks like a form of emphasis, but not always. See example below </h1>
+        <blockquote>
+            <p>He wants to play with his <mark>Legos</mark></p>
+        </blockquote>
+        <p>The person being quoted is clearly American because, for some odd reason, they pluralise "Lego". </p>
+        <h1>Redefining the "presentational" tags, also know as "Cliff Richard tags".</h1>
+        <p>The single most revolting "advance" in HTML5 is its attempt to redefine the archaic presentational tags. It is still in development (therefore aren't ideal and messy). It is recommended to avoid these tags whenever possible (esp. old browsers can't read them anyway, and 'em' does the job perfectly more often than not). However, it is a <mark>personal call</mark>, because some do use them. </p>
+        <dl>
+            <dt>'hr':</dt>
+            <dd>no longer "horizontal rule", but a <mark>thematic break</mark> between paragraphs. </dd>
+            <p>Like...</p><hr><p>This!</p>
+            <dt>'small':</dt>
+            <dd>used for <strong>small print</strong>, but no longer <small>"print that is small"</small>.</dd><br>
+            <dt>'s': no longer "strikethrough", but for text that is <mark>no longer correct</mark>. Just like 'del'. </dt>
+            <p>Example: this is <s>presentational, not</s> meaningful.</p>
+            <dt>'u': no longer "underline", but <mark>unarticulated</mark>. It's also <u>"useless"</u> but bonus point for the abbreviation remaining intact.</dt><br>
+            <dt>'i': no longer "italic", but <mark>alternative voice</mark>. <em>So</em>, like, differently <i>emphasized</i>.</dt><br>
+            <dt>'b': no longer <bold>"bold"</bold>; but <b>"bollocks"</b>, or "attention". </dt><br>
+            <dt>'sub' and 'sup' are still <sub>subscript</sub> and <sup>superscript</sup>; but somehow not presentational anymore. </dt>
+        </dl>
+    </article>
+    <article>
+        <h1>Conditional Comments - for older version of IE (up to version 9). IE10 onwards no longer need them. </h1>
+        <section>
+            <p>It has become a common practice of latching extra CSS to a document to plaster over holes in those inept and naughty older IE versions, as example below:</p>
+            <pre><code>
+                &lt;link href="everything.css" rel="stylesheet"&gt;
+                &lt;!--[if IE]&gt;&lt;link href="stupidie.css" rel="stylesheet"&gt;&lt;![endif]--&gt;
+            </code></pre>
+            <p>You can also target specific versions of IE:</p>
+            <ul>
+                <li>&lt;!--[if IE6&gt;...</li>
+                <li>&lt;!--[if IE7&gt;...</li>
+                <li>&lt;!--[if IE8&gt;...</li>
+                <li>&lt;!--[if IE9&gt;...</li>
+            </ul>
+            <p>Or, target versions that are greater than or less than a certain number:</p>
+            <ul>
+                <li>&lt;!--[if IE gt 6]&gt;...     which is greater than version 6</li>
+                <li>&lt;!--[if IE gte 8]&gt;...      greater than or equal to</li>
+                <li>&lt;!--[if IE lt 7]&gt;...      less than</li>
+                <li>&lt;!--[if IE ite 7]&gt;...       less than or equal to</li>
+            </ul>
+            <p>There are actually more options, such as <a href="http://msdn.microsoft.com/en-gb/library/ms527512(v=vs.95).aspx">M$'s own take on it</a>, but largely totally unnecessary.</p>
+            <p>Like all hacks, it is best to avoid when possible. It's more for small fallbacks so that you can use the scrumptious likes of CSS3 without compomise. And don't assume you have to accommodate every stone-age versoin of IE - try to figure out what is sensible for you to support, by checking your website users' browser versions.</p>
+        </section>
+    </article>
+    <article>
+        <h1>Tables: Columns, Headers, Footers, 'colgroup', 'col' </h1>
+        <p>Tables are build row by row, that could make columns look rather stupid. Without tags like 'colgroup' & 'col', you would have to target individual cells. </p>
+        <section>
+            <table>
+                <colgroup>
+                    <col>
+                    <col class="alternative">
+                    <col>
+                </colgroup>
+                <tr>
+                    <td>This</td>
+                    <td>That</td>
+                    <td>The other</td>
+                </tr>
+                <tr>
+                    <td>Ladybird</td>
+                    <td>Locust</td>
+                    <td>Lunch</td>
+                </tr>
+            </table>
+        </section>
+        <p>Alternative is to use 'span' attribute in a similar way to 'rowspan' and 'colspan', and apply CSS to the class. BTW, when 'span' is used in 'colgroup', you shouldn't then use 'col' tags. </p>
+        <p>Also, a brief and easy accessibility consideration is to apply a 'caption' to the table, by putting the element straight after the opening 'table' tag. </p>
+        <section>
+            <table>
+                <caption>Locust mating habits</caption>
+                <colgroup>
+                    <col>
+                    <col span="2" class="alternative">
+                </colgroup>
+                <tr>
+                    <td>This</td>
+                    <td>That</td>
+                    <td>The other</td>
+                </tr>
+                <tr>
+                    <td>Ladybird</td>
+                    <td>Locust</td>
+                    <td>Lunch</td>
+                </tr>
+            </table>
+        </section>  
+        <p>Another way is to use CSS 'caption-side: bottom'. And, if a table is the sole content of a 'figure' element, the mighties 'figcaption' would be preferable to 'caption' element. </p>
+    </article>
+    <article>
+        <h1>Headers and Footers of a Table: 'thead', 'tfoot', 'tbody' </h1>
+        <pre><code>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Header 1</td>
+                        <td>Header 2</td>
+                        <td>Header 3</td>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td>Footer 1</td>
+                        <td>Footer 2</td>
+                        <td>Footer 3</td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>Cell 1</td>
+                        <td>Cell 2</td>
+                        <td>Cell 3</td>
+                    </tr>
+                    <!-- One tbody could have multiple tr or table rows -->
+                </tbody>
+                <!-- One table could have multipe tbodys -->
+            </table>
+        </code></pre>
+        <p>Pay attention to the format here! Without the 'colgroup' and 'col', it looks very ugly and terrible.</p>
+    </article>
+    <article>
+        <h1>Accessible Links for disabled people who doesn't or can't use pointing devices, so that they can either tab through the links, or using a screen reader to read them out, using 'tabindex' attribute in order. Please see example below</h1>
+        <section>
+            <ul>
+                <li><a href="here.html" tabindex="1">Here</a></li>
+                <li><a href="there.html" tabindex="3">There</a></li>
+                <li><a href="limbo.html" tabindex="2" accesskey="s">Limbo</a></li>
+            </ul>
+        </section>
+        <p>The good bit of link-accessibility advice is to <mark>write good link text</mark>, so that it is easier for your users to navigate through the pages without a pointing device(such as mouse). </p>
+        <h2>Link Titles: to make the link more descriptive</h2>
+        <p>Example here: I'm really bad at writing link text. <a href="inept.html" title="Why I'm rubbish at writing link text: An explanation and an apology.">Click here</a> to find out more.</p>
+        <p>Another tip: <em><b>Don't have links open something in a new window or tab</b></em>. If you can't see, you won't be able to use back button, close window or tab, and some other tasks.</p>
+        <h2>Access Keys or keyboard shortcut (when user presses "Alt" or "Ctrl" + the access key)</h2>
+        <p>See example above: added accesskey to 's' into "Limbo". It would be a quick way to navigate using keyboard instead of mouse or other pointing devices, if the use <strong>KNOW</strong> explicitly what that key is, or having some assistive software to tell the user what that key is.</p>
+        <h2>Skipping HTML allow users to jump over chunks of the web page</h2>
+        <section>
+            <header>
+                <h1>The Heading</h1>
+                <a href="#content">Skip to content</a>
+            </header> 
+
+            <nav>
+                <!--loads of navigation stuff -->
+            </nav>
+
+            <section id="content">
+                <!--lovely content -->
+            </section>
+        </section>
+        <p>Remember it is not for an abled-bodied users, so you won't want this link to be displayed visually. So you can use CSS to render it invisible, but you might also want to consider making it visible when it has focus from being tabbed to using the ':focus' CSS pseudo class. </p>
+    </article>
+    <article>
+        <h1>Accessible Forms: using Labels, Field sets and Legends, to allow disabled people to input into the forms.</h1>
+        <section>
+            <h3>Example of Label tag using 'for' attribute</h3>
+            <form>
+                <label for="yourName">Your Name</label>
+                <input name="yourName" id="yourName">
+                <!-- etc. -->
+            </form>
+            <p>Labels have the added bonus of visual browsers rendering the labels themselves <strong>clickable</strong>, putting the focus on the associated form field. Both 'name' & 'id' attributes are typically required: the 'name' for the form to handle that field and the 'id' for the label to associate it to. </p>
+        </section>
+        <section>
+            <h3>You can group fields using the 'fieldset' tag, and using 'legend' tag inside the 'fieldset' tag for caption. BTW, I believe that it can be use even with abled-bodied users as well, visually.</h3>
+            <form action="somescript.php">
+                <fieldset>
+                    <legend>Name</legend>
+                    <p>First name <input name="firstName"></p>
+                    <p>Last name <input name="lastName"></p>
+                </fieldset>
+                <fieldset>
+                    <legend>Address</legend>
+                    <p>Address <textarea name="address"></textarea></p>
+                    <p>Postal code <input name="postcode"></p>
+                </fieldset>
+                <!-- etc. -->
+            </form>
+            <p>Most browsers display field sets from top left corner by default. You can, of course, change this with CSS if you wish.</p>
+        </section>
+        <section>
+            <h3>The 'optgroup' element(Option Groups) requires a 'label' attribute, as following example. This one, too, is also good for abled-bodied users!</h3>
+            <select name="country">
+                <optgroup label="Africa">
+                    <option value="gam">Gambia</option>
+                    <option value="mad">Madagascar</option>
+                    <option value="nam">Namibia</option>
+                </optgroup>
+                <optgroup label="Europe">
+                    <option value="fra">France</option>
+                    <option value="rus">Russia</option>
+                    <option value="uk">UK</option>
+                </optgroup>
+                <optgroup label="North Amrica">
+                    <option value="can">Canada</option>
+                    <option value="mex">Mexico</option>
+                    <option value="usa">USA</option>
+                </optgroup>
+            </select>
+        </section>
+    </article>
+    <article>
+        <h1>HTML Forms Part 1: Input Types</h1>
+        <h3>Warning: none of these would work on IE version 9 and below. Even IE 10 failed to support some input types</h3>
+        <p>HTML 5 greatly advances form controls, with numerous additional input types, several new attributes, and a handful of extra elements.</p>
+        <p>Below are the basic form fields created using the 'input' element, including: </p>
+        <ul>
+            <li>text</li>
+            <li>password</li>
+            <li>checkbox</li>
+            <li>radio</li>
+            <li>submit</li>
+            <li>search: used for search query text box, performs exactly as a standard text input should. The main intention is one of style, using a CSS attribute selector: "input[type=search] {background: url(magnifyingglass.png) right no-repeat) }"<br>
+                <label for="search">search: </label>
+                <input type="search" name="search" id="search">
+            </li>
+            <li>Other types includes: 'tel' for telephone; 'url' for web address; 'email' for email address; and CSS3 pseudo classes of ':valid' and ':invalid' to style the fileds
+                <section>
+                    <label for="telephone_number">telephone_number: </label>
+                    <input type="tel" name="telephone_number" id="telephone_number">
+                    <label for="web_address">web_address: </label>
+                    <input type="url" name="web_address" id="web_address">
+                    <label for="email_address">email_address: </label>
+                    <input type="email" name="email_address" id="email_address">
+                </section>
+                <section>
+                    <p>Below are advanced CSS styles as an example: colour green if valid, red if not.
+                    input[type=email]: valid {background: green}
+                    input[type=email]: invalid {background: red}
+                    </p>
+                </section>
+            </li>
+            <li></li>
+        </ul>
+    </article>
+
+</body>
+</html>
