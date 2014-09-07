@@ -245,9 +245,108 @@
                     </p>
                 </section>
             </li>
-            <li></li>
+            <li>A 'number' type with further 'step' attribute can be added, and ":valid" &. ":invalid" can be used as well. The alternative is 'range' type for digits-in-a-text-box approach.
+                <section>
+                    <label for="quantity">Quantity Number: </label>
+                    <input type="number" name="quantity" step="2" min="20" max="30" id="quantity"><br>
+                    <label for="tempature">Tempature Range: </label>
+                    <input type="range" name="tempature" min="15" max="25" step="0.5" value="18.5" id="tempature">
+                </section>
+            </li>
+            <li>
+                <p>There are many types of dates and times, including: 'type=xxx' </p>
+                <ul>
+                    <li>datetime</li>
+                    <li>date</li>
+                    <li>month</li>
+                    <li>week</li>
+                    <li>time</li>
+                    <li>datetime-local</li>
+                </ul>
+                <p>They can also use attributes like 'step', 'min', 'max'; as well as CSS pseudo classes to style according to validity.</p>
+                <section>
+                    <label for="currentDateTime">DateTime</label>
+                    <input type="datetime-local" name="currentDateTime" step="2" id="currentDateTime">
+                </section>
+            </li>
+            <li>The 'color' type is designed to allow a user to select a color, sending a six-digit hex code as its value. </li>
+            <section>
+                <label for="colour">Please pick a color: </label>
+                <input type="color" name="colour" value="#ff8800" id="colour">
+            </section>
         </ul>
     </article>
-
+    <article>
+        <h1>HTML Form Part 2: Attributes and Data Lists</h1>
+        <ul>
+            <li>
+                <p>Placeholder text attribute are used as kind of <strong>hint</strong> rather than label, for text input fields, such as type of 'email', 'number', or 'textarea' element.</p>
+                <section>
+                    <label for="email_address">Email Address: </label>
+                    <input type="email" placeholder="you@somewhere.com" name="email_address" id="email_address" autofocus>
+                </section><br>
+            </li>
+            <li>The example is last one above, that when the page loads, the focus will land on that field with attribute of 'autofocus'. Consider a search engine page, that you don't need to click on search box to start typing, because it already has the focus. </li>
+            <li>
+                <p>A 'datalist' takes the form of a list of <strong>suggestions</strong> that accompanies a text field. In the example below, if you type 'A', all 8 country names will appear. If next type 'L', it would reduce to just two("Albania" &. "Algeria"), and so on.</p>
+                <section>
+                    <label for="country_name">Country: </label>
+                    <input name="country" list="country_name">
+                    <datalist id="country_name">
+                        <option value="Afghanistan">
+                        <option value="Albania">
+                        <option value="Algeria">
+                        <option value="Andorra">
+                        <option value="Armenia">
+                        <option value="Australia">
+                        <option value="Austria">
+                        <option value="Azerbaijan">
+                        <!-- etc. -->
+                    </datalist>
+                </section>
+            </li>
+        </ul>
+        <h4>BTW, both above two parts of form features degrade gracefully. If a browser doesn't support a type or option, it would still maintain the text box, and placeholder won't appear so as long as it isn't essential. Go for it!</h4>
+    </article>
+    <article>
+        <h1>Embedded Content: Video, Audio, Canvas</h1>
+        <p>Video used to be complex and with its compatibility problems, using 'img' or 'object' elements with various plugins and proprietary devil dusts. Now it is very simple, as following. But, the media is not standardised across browsers (some support WebM video, others support MPEG); there are alternatives to address the issue. </p>
+        <section>
+            <video src="kitties.mp4" controls></video>
+            <video src="kitties.mp4" autoplay></video>
+            <video src="kitties.mp4" width="300" height="200" poster="teaoftheday.jpg" loop muted autoplay controls></video>
+        </section>
+        <p>If you insist on using 'autoplay', turn on 'muted' and/or 'controls' as well to reduce user irritation, as a nice gesture. User can de-moting the video via controls if they want to.</p>
+        <p>You can specify a <strong>placeholder image</strong> using 'poster' attribute, which will be displayed before the video is played. That image will stretch or shrink to fit the dimensions of the video, regardless of the original size of the image (as last video in above section shows).  </p>
+        <p>Fall-back content will be displayed if the browser doesn't understand the 'video' element. If the browser understands, it would be just a normal embedded video there.</p>
+        <section>
+            <video src="kitties.mp4" controls>
+                <img src="teaoftheday.jpg" alt="Hilarious cat and caption saying 'soz'.">
+            </video>
+        </section>
+        <p>Alternative content is to address the compatibility issue of the source video format. By offering multiple source files in multiple formats, the browser will then take the first one it understands to play with.</p>
+        <section>
+            <video controls>
+                <source src="kitties.mp4" type="video/mp4; codecs='avc1, mp4a'">
+                <source src="kitties.webm" type="video/webm; codecs='vp8.0, vorbis'">
+                <p>Browser no likey HTML 5.</p>
+            </video>
+        </section>
+        <p>Please pay attention to the <strong>type attribute and its values</strong> inside <mark>source tag</mark>. </p>
+        <p>Applying 'audio' is just the same as 'video', and with those attributes above, or even the 'source' tag. </p>
+        <section>
+            <audio src="meow_mix.mp3" controls>
+                Your stupid browser doesn't support HTML 5 audio.
+            </audio>
+        </section>
+        <p>Javascript can provide greater control over video and audio, with the ability of manipulate aspects of playback and user controls in more details.</p>
+        <p>A major addition of HTML5 is the 'canvas' element, that is designed to use Javascript to paint all dynamic images such as graphs, animated sprites, or daft cat pictures. </p>
+        <section>
+            <canvas id="wittykitty" width="800" height="450">
+                <!-- Fall-back content here, just like with video and audio -->
+            </canvas>
+        </section>
+    </article>
+    <p>That's all!</p>
 </body>
 </html>
