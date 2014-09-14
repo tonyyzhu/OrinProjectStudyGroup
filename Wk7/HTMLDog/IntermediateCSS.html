@@ -10,5 +10,36 @@
         <p class="intro">This is my recipe for making curry purely with chocolate</p>
         <p class="intro">Mmm mm</p>
     </div>
+    <p>CSS can also be grouped (separation using ',')  and nesting (use space to separate the following subordinate elements). <a href="#">link or unvisited link should be blue, while visted link should be purple</a>.  </p>
+    <p>CSS rule conflicts: more specific = greater precedence. If the selectors are the same, then the last one wins. </p>
+    <p>Calculating specificity: ID Selector (#) = 100, Class Selector(.) = 10, HTML element selector(such as 'p') = 1; then add them together. The bigger number wins. </p>
+    <ul>
+        <p>For navigation bar, using "{display: inline}" would make all list items appear next to each other, instead of line by line display of list items. There are also {display:block} to make keep each element as a clickable block. Also 'inline-block' to have them inline and at same time with a clickable box.</p>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <p>Also {display: none;} and {visibility: hidden;} are different, where first one get rid of the box completely, the second one is just hide the box for display, but keep the invisible box and its flow in place. </p>
+    <ul>
+        <p>Tables not only have 'tr' and 'td' for table-row and table-cell property values in HTML Tables; but also has CSS way of using 'display' property(But be aware of older browsers or user turn off CSS could cause serious trouble. So it is recommended to use HTML Table instead for now), such as below:</p>
+        <li>table-column</li>
+        <li>table-row-group</li>
+        <li>table-column-group</li>
+        <li>table-header-group</li>
+        <li>table-footer-group</li>
+        <li>table-caption</li>
+        <li>inline-table: it will set the table without line breaks before and after it.</li>
+        <p>'run-in' makes a box either in-line or block, depending on the display of its parent.</p>
+    </ul>
+    <h3>Pseudo Elements: four of them, using the form of selector:pseudoelement {property: value;}</h3>
+    <ul>
+        <li>First Letter</li>
+        <li>First Line</li>
+        <li>'before' pseudo element uses in conjunction with the 'content' property, without touch the HTML. (not recommended). </li>
+        <li>'after' with 'content'. Same as above. </li>
+        <p>BTW, CSS3 specs suggest pseudo elements should include two colons, such as p::first-line instead of p:first-line.</p>
+    </ul>
+    <h3>Page Layout using 'position' property to define a box as 'static', 'relative', 'fixed' or 'sbsolute'; 'float' to 'left' or 'right'; (and 'clear' of 'left', 'right' or 'both' to cancel the 'float'). 'clear: both' is esp important to 'footer'. </h3>
+    <p>Remember: they can apply to boxes within those boxes too. So the combination of positioning, floating, margins, padding and borders, would be enough to represent any web design required. </p>
 </body>
 </html>

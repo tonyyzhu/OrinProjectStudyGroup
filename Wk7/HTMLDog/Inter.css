@@ -7,3 +7,47 @@
     color: green;
     font-weight: bold;
 }
+
+body {
+    background: white url(http://megahdwall.com/wp-content/uploads/2014/06/Bmw-Z-Cat-Free-D-328888.jpg) no-repeat top right; 
+}
+
+body:nth-child(2) {
+    background-color: gray;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: purple;
+}
+
+a: active{
+    color: red;
+}
+
+a:hover {
+    text-decoration: none;
+    color: navy-blue;
+    background-color: yellow;
+}
+
+input:focus, textarea:focus {
+    background-color: #eee;
+}
+
+li {
+    display: inline-block;
+    padding: 20px 10px;
+    color: Yellow;
+}
+
+p:first-letter {
+    font-size: 48px;
+}
+
+p::first-line {
+    font-weight: bold;
+}
