@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Dosis);
+@import url(http://font.googleapis.com/css?family=Oxygen);
+
 #mar {
     background: #fc0;
     padding: 20px;
@@ -28,4 +31,38 @@
     border-radius: 3px 6px 9px 12px;
     box-shadow: inset 0 0 7px 5px #ddd;
     text-shadow: -2px 2px 2px #999;
+}
+
+#contact * {
+    display: block;
+}
+
+#genus_examples > li {
+    border: 1px solid red;
+}
+
+h4 + p {
+    font-weight: bold;
+}
+
+#rgbatest {
+    padding: 50px;
+    background-image: url(http://megahdwall.com/wp-content/uploads/2014/06/Bmw-Z-Cat-Free-D-328888.jpg);
+    color: rgba(255,255,255,0.8);
+}
+
+#smut {
+    color: hsl(36, 100%, 50%);
+}
+
+#rabbit {
+    background: hsla(0,75%, 75%, 0.5);
+}
+
+#fun1 {
+    font-family: 'Oxygen';
+}
+
+#fun2 {
+    font-family: 'Dosis';
 }

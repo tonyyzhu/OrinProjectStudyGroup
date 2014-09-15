@@ -13,5 +13,93 @@
     <div id="nanoo">Ellipse too square?</div>
     <hr />
     <div id="sha">Inner border Shadows &. text Shadows</div>
+    <hr />
+
+    <h3>Universal, child, adjacent selectors</h3>
+    <p id="contact">Universal Selector is just a '*' or asterisk, to target everything in the content (after the condition of any element before it). Usually used to cancel out default styles of the browser. </p>
+
+    <h4>Below is the usage of child selectors: only 'Cats' &. 'Apes' are red boxed, not those grandchildren elements like 'Felis' or 'Pan'.</h4>
+    <ul id="genus_examples">
+        <li>Cats
+            <ul>
+                <li>Panthera</li>
+                <li>Felis</li>
+                <li>Neofelis</li>
+            </ul>
+        </li>
+        <li>Apes
+            <ul>
+                <li>Pongo</li>
+                <li>Pan</li>
+                <li>Homo</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>Adjacent Selector use a plus sign like '+'; like following example:</h4>
+    <p>Clouded leopards are cats that belong to the genus Neofelis.</p>
+    <p>There are two extant species: Neofelis nebulosa and Neofelis diardi.</p>
+    <p>So only the first paragraph followed 'h4' title are bold. But, if you replace '+' with '~' in CSS statements, then all the following paragraphs under that title will be affected.</p>
+
+    <h3 id="rgbatest">Advanced CSS3 Colors: Hue, Saturation, Lightness (HSL), and transparency.</h3>
+    <p>The last value of '0.8' in rgba, is 80% of opaque or 20% of transparent. So it is 80% white here. </p>
+    <p id="smut">RGB as web color is always Red, Green and Blue. Here is what it means for 'hsl(36,100%, 50%):</p>
+    <ul>
+        <li>'36' is Hue value, that angle from 0 to 360 degree of a typical color wheel, are: 
+            <ul>
+                <li>0 and 360 is red</li>
+                <li>120 is green</li>
+                <li>240 is blue</li>
+                <li>So 36 is between red and green here.</li>
+            </ul>
+        </li>
+        <li>100% is Saturation of hsl, that 0% is none and 100% is the whole in the level of grey. Here 100% is the full whack.</li>
+        <li>50% is the Lightness of hsl, that 0% is black and 100% is white. 50% is 'normal'. </li>
+        <li>So this example of hsl(36,100%, 50%) is: orange, 100% rich of colour, and 50% lightness or normal vibrant. It is the equivalent of #ff9900, #f90, or rgb(255,153,0). </li>
+    </ul>
+    <p id="rabbit">HSLa (a for alpha transparency, just like RGBa), is the funky way of combine transparency and HSL, which is supported by IE9 and above.</p>
+
+    <h3>At-Rules: @import, @media, @font-face</h3>
+    <p>Importing: @import url(morestyle.css); used to bolt another stylesheet onto this existing one. It is used to break down a lot and complex stylesheet into smaller files for easy management. It must be placed at the top of a stylesheet, before any other rules.</p>
+    <p>Targeting media types: @media can be used to apply styles to a specific media, such as print. </p>
+        <section>
+            <pre><code>
+                @media print {
+                    body {
+                        font-size: 10pt;
+                        font-family: times, serif;
+                    }
+
+                    @navigation {
+                        display: none;
+                    }
+                }
+            </code></pre>
+        </section>
+    <p>Values of @media can include:</p>
+    <ul>
+        <li>screen</li>
+        <li>print</li>
+        <li>projection</li>
+        <li>handheld</li>
+        <li>all (for all above)</li>
+        <li>or a comma-separated list of more than one of above, such as @media screen, projection { /* .. */}</li>
+        <li>And also: media query, which is the last section of this article.</li>
+    </ul>
+
+    <h3>Embedding Fonts</h3>
+    <pre><code>
+        @font-face {
+            font-family: "font of all knowledge";
+            src: url(fontofallknowledge.woff), local(fontofallknowledge), local("font of all knowledge");
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        p {font-family: "font of all knowledge", arial, sans-serif;}
+    </code></pre>
+    <p id="fun1">If the font has been downloaded and existed in local directory, then you can use 'local()' as above. Otherwise just omit them.</p>
+    <p id="fun2">This enabled you to use other fonts outside of 'web safe' fonts such as Arial or Verdana. If you have the copyright to use it, or use Google Web Fonts (more limited selection but free). </p>
+
 </body>
 </html>
