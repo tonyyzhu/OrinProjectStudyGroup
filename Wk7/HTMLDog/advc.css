@@ -66,3 +66,12 @@ h4 + p {
 #fun2 {
     font-family: 'Dosis';
 }
+
+.trans:link {
+    transition: all .5s linear 0;
+    color: hsl(36, 50%, 50%);
+}
+
+.trans:hover {
+    color: hsl(36,100%,50%);
+}

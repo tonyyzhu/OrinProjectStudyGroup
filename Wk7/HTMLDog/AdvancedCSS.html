@@ -101,5 +101,53 @@
     <p id="fun1">If the font has been downloaded and existed in local directory, then you can use 'local()' as above. Otherwise just omit them.</p>
     <p id="fun2">This enabled you to use other fonts outside of 'web safe' fonts such as Arial or Verdana. If you have the copyright to use it, or use Google Web Fonts (more limited selection but free). </p>
 
+    <h3>Attribute Selectors</h3>
+    <p>There is no current style here for reference, and it is 2:30AM so I won't make few now. Just copy and paste them into here, for later reference.</p>
+    <ul>
+        <li> With the attribute -- shove a dotted line underneath all abbreviation with a 'title' attribute.
+            <pre><code>
+                abbr[title] {border-bottom: 1px dotted #ccc;}
+            </code></pre>
+        </li>
+        <li>With the attribute and value -- apply a width of 200px only to 'input' element spedified as text boxes.
+            <pre><code>
+                input[type=text] {width: 200px;}
+            </code></pre>
+        </li>
+        <li>Could also target more than one attribute at a time -- only apply a gray border to text inputs that are disabled.
+            <pre><code>
+                input[type=text][disabled] {border: ipx solid #ccc;}
+            </code></pre>
+        </li>
+        <li>CSS3 further allow to match an attribute without being exact: [attribute^=something] means match with the value of an attribute that <strong>begins</strong> with 'something'. Below is making 'a' element with external links 'href=http...' style differently, that internal link won't apply for this style:
+            <pre><code>
+                a[href^=http] {
+                    padding-right: 10px;
+                    background: url(arrow.png) right no-repeat;
+                }
+            </code></pre>
+        </li>
+        <li>[attribute$=something] means match value <strong>ends</strong> with 'something'.</li>
+        <li>[attribute*=something] means match value <strong>contains</strong> 'something', no matter its location at beginning, middle or end. </li>
+    </ul>
+
+    <h3>CSS Transitions -- animate parts of design without the likes of Javascript!</h3>
+    <p>The simplest level, is like state of ':link' (such as a:link) and ':hover' (such as a:hover). They are binary animation (or jump from one state to another). The <mark>transition</mark> property, is much more fowerful. </p>
+    <ul>
+        <li class="trans">transition-property: which property (or properties) will transition</li>
+        <li class="trans">transition-duration: how long the transition takes</li>
+        <li class="trans">transition-timing-function: speed constant, or if accelerates or decelerates</li>
+        <li class="trans">transition-delay: how long to wait until starts transition</li>
+        <li>Only transition-duration is required for a transition to take place. the rest defaulting to: 
+            <ul>
+                <li>transition-property: all;</li>
+                <li>transition-timing-function: ease;</li>
+                <li>transition-delay:0;</li>
+                <li>So, you could simply declare 'transition: .5s'; which is enough.</li>
+            </ul>
+        </li>
+    </ul>
+
+
 </body>
 </html>
